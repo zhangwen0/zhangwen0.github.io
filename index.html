@@ -159,6 +159,86 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Python-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/13/Python-1/">Python学习笔记2</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/13/Python-1/" class="archive-article-date">
+  	<time datetime="2018-07-13T01:12:18.252Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>DAY2：变量、常见的数据类型</p>
+<p>续Python学习笔记1</p>
+<h3 id="3、变量"><a href="#3、变量" class="headerlink" title="3、变量"></a>3、变量</h3><p>####变量的声明<br>在Python中，不存在变量类型的定义，直接声明其名字，如i=10</p>
+<p>####变量的赋值<br>在Python中有两种赋值方式<br>    第一种：单个变量赋值 name=’tom’<br>    第二种：多个变量赋值 name,age,sex=’tom’,23,’男’</p>
+<p>####变量在内存中的存在情况<br>    1）Python中的变量，在声明和赋值时，不仅声明了变量的名字同时还为这个变量指向了内存中的地址，该地址用来存变量的值<br>    2）Python中整数、字符串、浮点数等其本身都属于常量，所以当赋值给一个变量时，如：i=10意味着将10这个常量的内存中的地址指向i，因此，i=10，j=10使用id(i),id(j)我们发现他们的id是相同的，因为，他们的值10在内存中的地址是相同的。</p>
+<p>####变量与地址<br>    当我们声明一个变量时，对其进行赋值。实际上就是将变量值所在的内存地址，赋值给该变量。也就是说这个变量指向其值所在的内存地址。<br>    当我们改变变量的值的时候，就是将变量指向的内存地址进行变化。<br>    例：我们日常购买商品，快递员通过你的邮寄地址将快递送到你本人手里。可以理解为，可以理解为，快递员拥有指向你这个变量的地址，通过地址，将快递商品赋值给你。</p>
+<p>####变量与常量<br>    变量：我们认为其内容是临时结果，可变的，供后续的程序代码进行调用。<br>    常量：我们认为其内容是不变的，或者在程序运行的过程中也不发生改变。<br>在Python中，我们通过大写变量名，来表明这是一个常量，比如ID=’41123218’</p>
+<p>####变量命名规则<br>    1）Python中的变量命名，必须由字母、数字或下划线三者组成，不能有其他的字符出现<br>    2）变量名的首个字符，必须是字母或下划线<br>    3）Python中的关键字不能作为变量名来使用，常用的关键字诸如：if, for, is, none等等。<br>注意：Python是严格区分大小写的语言，其中A = 10 ，a = 10。我们认为这是两个不同的变量</p>
+<p>###4、基本数据类型<br>常见的数据类型有：整型、浮点型、布尔型、复数型、字符串型，我们工作中常用到整型、字符串型。</p>
+<p>####整型<br>    我们通常根据计算机中数据编码格式，将整型分为：二进制、八进制、十进制、十六进制四种类型。<br>进制间的转换：<br>二进制转十进制：bin(int)=&gt;将十进制转为二进制   int(bin)=&gt;将二进制转为十进制<br>八进制转十进制：oct(int)=&gt;将十进制转为八进制   int(oct)=&gt;将八进制转为十进制<br>十六进制转十进制： hex(int)=&gt;将十进制转为十六进制，int(hex)=&gt;将十六进制转为十进制</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/13/Python-1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-游戏输出" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -244,7 +324,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>DAY1</p>
+        <p>DAY1：编码、print()函数</p>
 <h2 id="一、基础语法"><a href="#一、基础语法" class="headerlink" title="一、基础语法"></a>一、基础语法</h2><h3 id="1、编码"><a href="#1、编码" class="headerlink" title="1、编码"></a>1、编码</h3><p>在开发过程中，对应不同的语言使用不同的字符编码。<br>    英文：  ISO-8859-1<br>    中文：  GBK或GB2312<br>目前Pytnon为了统一编码格式，在3.0以上的版本使用了UTF-8编码</p>
 <h3 id="2、print-函数"><a href="#2、print-函数" class="headerlink" title="2、print()函数"></a>2、print()函数</h3><p>语法格式：print(value,…,sep=’ ’,end=’\n’)<br>value代表我们要输出的内容，可以是字符串，可以是数值等内容<br>sep代表输出多个值之间的间隔符，默认使用空格隔开，可以重新定义间隔符，比如采用，.#￥<br>end代表输出语句的结束标识，默认使用了换行，可以重新定义使用其他结束标识使其不再换行。</p>
 <h4 id="print-函数的基本使用"><a href="#print-函数的基本使用" class="headerlink" title="print()函数的基本使用"></a>print()函数的基本使用</h4><p>（1）常用输出方式：print(‘hello’),print(123456)等<br>（2）参数格式输出：%s、%d、%f<br>%s：代表字符串的内容<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'welcome to %s'</span>%<span class="string">'Beijing'</span>)  <span class="comment">#输出welcome to Beijing</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'welcome to %10.3s'</span>%<span class="string">'Beijing'</span>)  </span><br><span class="line"><span class="comment">#输出welcome to        Bei 10表示输出的字符串占十个字节，3表示输出的字符串中包含字符串Beinjing中的三个，剩余位补空格</span></span><br></pre></td></tr></table></figure></p>
@@ -517,7 +597,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
+              <a href="https://gorrice.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>小云云的日常技术博客</a>
             </li>
           
             <li class="search-li">
