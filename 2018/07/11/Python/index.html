@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Python学习笔记 | 张文的Python博客</title>
+  <title>Python学习笔记1 | 张文的Python博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="DAY1：编码、print()函数 一、基础语法1、编码在开发过程中，对应不同的语言使用不同的字符编码。    英文：  ISO-8859-1    中文：  GBK或GB2312目前Pytnon为了统一编码格式，在3.0以上的版本使用了UTF-8编码 2、print()函数语法格式：print(value,…,sep=’ ’,end=’\n’)value代表我们要输出的内容，可以是字符串，可以是">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python学习笔记">
+<meta property="og:title" content="Python学习笔记1">
 <meta property="og:url" content="http://yoursite.com/2018/07/11/Python/index.html">
 <meta property="og:site_name" content="张文的Python博客">
 <meta property="og:description" content="DAY1：编码、print()函数 一、基础语法1、编码在开发过程中，对应不同的语言使用不同的字符编码。    英文：  ISO-8859-1    中文：  GBK或GB2312目前Pytnon为了统一编码格式，在3.0以上的版本使用了UTF-8编码 2、print()函数语法格式：print(value,…,sep=’ ’,end=’\n’)value代表我们要输出的内容，可以是字符串，可以是">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-13T02:43:17.083Z">
+<meta property="og:updated_time" content="2018-07-13T05:29:06.809Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python学习笔记">
+<meta name="twitter:title" content="Python学习笔记1">
 <meta name="twitter:description" content="DAY1：编码、print()函数 一、基础语法1、编码在开发过程中，对应不同的语言使用不同的字符编码。    英文：  ISO-8859-1    中文：  GBK或GB2312目前Pytnon为了统一编码格式，在3.0以上的版本使用了UTF-8编码 2、print()函数语法格式：print(value,…,sep=’ ’,end=’\n’)value代表我们要输出的内容，可以是字符串，可以是">
   
     <link rel="alternative" href="/atom.xml" title="张文的Python博客" type="application/atom+xml">
@@ -168,7 +168,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Python学习笔记
+      Python学习笔记1
     </h1>
   
 
@@ -188,7 +188,8 @@
 <p>%d：代表整数内容<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'今天花了%d元'</span>%10)  <span class="comment">#输出今天花了10元</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'今天花了%d元'</span>%10.5)  <span class="comment">#输出今天花了10元，%号后跟的数值是10.5，但输出仍然是整数</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'今天花了%5d元'</span>%10)   <span class="comment">#输出今天花了   10元 这里的5d表示输出一个宽度为5的数值，如果数值长度小于5，则数值靠右对齐。</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'今天花了%-5d元'</span>%10)  <span class="comment">#输出今天花了10   元  这里-5的意义与5相同，但数值靠左对齐。</span></span><br></pre></td></tr></table></figure></p>
 <p>%f：代表浮点数内容(注意，在Python中浮点数是一个近似值，所以结果也是近似值）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'price %f'</span>%10.2)  <span class="comment">#输出10.200000</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'price %.1f'</span>%10.2)  <span class="comment">#输出10.2</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'prince %.1f'</span>%10.58)  <span class="comment">#输出10.6 当取一位小数位的时候，将小数位第二位进行舍入操作，但是Python的中间值不是5，导致当小数位第二位是5时，直接被舍去</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'%5.1f'</span>%10.3)  <span class="comment">#输出 10.3 输出了一个宽度为5的单位，其中整数3位，小数部分1位，小数点占一位</span></span><br></pre></td></tr></table></figure></p>
 <p>（3）格式化输出<br>在python3.0之后，推荐使用{0}来代替前期的%d、%s、%f等一系列格式化参数，采用了format函数进行处理。写法如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'今天毕业，乘坐&#123;0&#125;到&#123;1&#125;的高铁去工作。'</span>.format(<span class="string">'郑州'</span>,<span class="string">'北京'</span>))  <span class="comment">#其中&#123;0&#125;,&#123;1&#125;分别映射format()中的‘郑州’,’北京’,如果前面占位符中的索引值变化，那么他们映射的值也随之变化。</span></span><br></pre></td></tr></table></figure></p>
-
+<pre><code>---未完待续
+</code></pre>
       
 
       
