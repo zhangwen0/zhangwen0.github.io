@@ -166,12 +166,82 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/13/Python-1/">Python学习笔记2</a>
+      <a class="article-title" href="/2018/07/13/Python-1/">Python学习笔记1</a>
     </h1>
   
 
         
         <a href="/2018/07/13/Python-1/" class="archive-article-date">
+  	<time datetime="2018-07-13T01:12:18.252Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>DAY1：编码、print()函数</p>
+<h2 id="一、基础语法"><a href="#一、基础语法" class="headerlink" title="一、基础语法"></a>一、基础语法</h2><h3 id="1、编码"><a href="#1、编码" class="headerlink" title="1、编码"></a>1、编码</h3><p>在开发过程中，对应不同的语言使用不同的字符编码。<br>    英文：  ISO-8859-1<br>    中文：  GBK或GB2312<br>目前Pytnon为了统一编码格式，在3.0以上的版本使用了UTF-8编码</p>
+<h3 id="2、print-函数"><a href="#2、print-函数" class="headerlink" title="2、print()函数"></a>2、print()函数</h3><p>语法格式：print(value,…,sep=’ ’,end=’\n’)<br>value代表我们要输出的内容，可以是字符串，可以是数值等内容<br>sep代表输出多个值之间的间隔符，默认使用空格隔开，可以重新定义间隔符，比如采用，.#￥<br>end代表输出语句的结束标识，默认使用了换行，可以重新定义使用其他结束标识使其不再换行。</p>
+<h4 id="print-函数的基本使用"><a href="#print-函数的基本使用" class="headerlink" title="print()函数的基本使用"></a>print()函数的基本使用</h4><p>（1）常用输出方式：print(‘hello’),print(123456)等<br>（2）参数格式输出：%s、%d、%f<br>%s：代表字符串的内容<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'welcome to %s'</span>%<span class="string">'Beijing'</span>)  <span class="comment">#输出welcome to Beijing</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'welcome to %10.3s'</span>%<span class="string">'Beijing'</span>)  </span><br><span class="line"><span class="comment">#输出welcome to        Bei 10表示输出的字符串占十个字节，3表示输出的字符串中包含字符串Beinjing中的三个，剩余位补空格</span></span><br></pre></td></tr></table></figure></p>
+<p>%d：代表整数内容<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'今天花了%d元'</span>%10)  <span class="comment">#输出今天花了10元</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'今天花了%d元'</span>%10.5)  <span class="comment">#输出今天花了10元，%号后跟的数值是10.5，但输出仍然是整数</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'今天花了%5d元'</span>%10)   <span class="comment">#输出今天花了   10元 这里的5d表示输出一个宽度为5的数值，如果数值长度小于5，则数值靠右对齐。</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'今天花了%-5d元'</span>%10)  <span class="comment">#输出今天花了10   元  这里-5的意义与5相同，但数值靠左对齐。</span></span><br></pre></td></tr></table></figure></p>
+<p>%f：代表浮点数内容(注意，在Python中浮点数是一个近似值，所以结果也是近似值）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'price %f'</span>%10.2)  <span class="comment">#输出10.200000</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'price %.1f'</span>%10.2)  <span class="comment">#输出10.2</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'prince %.1f'</span>%10.58)  <span class="comment">#输出10.6 当取一位小数位的时候，将小数位第二位进行舍入操作，但是Python的中间值不是5，导致当小数位第二位是5时，直接被舍去</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'%5.1f'</span>%10.3)  <span class="comment">#输出 10.3 输出了一个宽度为5的单位，其中整数3位，小数部分1位，小数点占一位</span></span><br></pre></td></tr></table></figure></p>
+<p>（3）格式化输出<br>在python3.0之后，推荐使用{0}来代替前期的%d、%s、%f等一系列格式化参数，采用了format函数进行处理。写法如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'今天毕业，乘坐&#123;0&#125;到&#123;1&#125;的高铁去工作。'</span>.format(<span class="string">'郑州'</span>,<span class="string">'北京'</span>))  <span class="comment">#其中&#123;0&#125;,&#123;1&#125;分别映射format()中的‘郑州’,’北京’,如果前面占位符中的索引值变化，那么他们映射的值也随之变化。</span></span><br></pre></td></tr></table></figure></p>
+<p> –未完待续–</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/13/Python-1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Python-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/13/Python-2/">Python学习笔记2</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/13/Python-2/" class="archive-article-date">
   	<time datetime="2018-07-13T01:12:18.252Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-13</time>
 </a>
         
@@ -200,8 +270,8 @@
 <p>2、求幂运算：pow()函数<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pow(2,3)  <span class="comment">#等同于2**3，输出8</span></span><br></pre></td></tr></table></figure></p>
 <p>3、求绝对值：abs()函数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abs(-8)  <span class="comment">#输出8</span></span><br></pre></td></tr></table></figure></p>
 <p>4、求两数相除的商与余数：divmod()函数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">divmod(5,3)  <span class="comment">#输出(1,2) 类似5%3 输出2</span></span><br></pre></td></tr></table></figure></p>
-<pre><code>---未完待续
-</code></pre>
+<p> –未完待续–</p>
+
       
 
       
@@ -213,7 +283,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/13/Python-1/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/07/13/Python-2/">展开全文 >></a>
         </p>
       
 
@@ -279,76 +349,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/07/12/游戏输出/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/11/Python/">Python学习笔记1</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/11/Python/" class="archive-article-date">
-  	<time datetime="2018-07-11T15:28:30.334Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>DAY1：编码、print()函数</p>
-<h2 id="一、基础语法"><a href="#一、基础语法" class="headerlink" title="一、基础语法"></a>一、基础语法</h2><h3 id="1、编码"><a href="#1、编码" class="headerlink" title="1、编码"></a>1、编码</h3><p>在开发过程中，对应不同的语言使用不同的字符编码。<br>    英文：  ISO-8859-1<br>    中文：  GBK或GB2312<br>目前Pytnon为了统一编码格式，在3.0以上的版本使用了UTF-8编码</p>
-<h3 id="2、print-函数"><a href="#2、print-函数" class="headerlink" title="2、print()函数"></a>2、print()函数</h3><p>语法格式：print(value,…,sep=’ ’,end=’\n’)<br>value代表我们要输出的内容，可以是字符串，可以是数值等内容<br>sep代表输出多个值之间的间隔符，默认使用空格隔开，可以重新定义间隔符，比如采用，.#￥<br>end代表输出语句的结束标识，默认使用了换行，可以重新定义使用其他结束标识使其不再换行。</p>
-<h4 id="print-函数的基本使用"><a href="#print-函数的基本使用" class="headerlink" title="print()函数的基本使用"></a>print()函数的基本使用</h4><p>（1）常用输出方式：print(‘hello’),print(123456)等<br>（2）参数格式输出：%s、%d、%f<br>%s：代表字符串的内容<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'welcome to %s'</span>%<span class="string">'Beijing'</span>)  <span class="comment">#输出welcome to Beijing</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'welcome to %10.3s'</span>%<span class="string">'Beijing'</span>)  </span><br><span class="line"><span class="comment">#输出welcome to        Bei 10表示输出的字符串占十个字节，3表示输出的字符串中包含字符串Beinjing中的三个，剩余位补空格</span></span><br></pre></td></tr></table></figure></p>
-<p>%d：代表整数内容<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'今天花了%d元'</span>%10)  <span class="comment">#输出今天花了10元</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'今天花了%d元'</span>%10.5)  <span class="comment">#输出今天花了10元，%号后跟的数值是10.5，但输出仍然是整数</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'今天花了%5d元'</span>%10)   <span class="comment">#输出今天花了   10元 这里的5d表示输出一个宽度为5的数值，如果数值长度小于5，则数值靠右对齐。</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'今天花了%-5d元'</span>%10)  <span class="comment">#输出今天花了10   元  这里-5的意义与5相同，但数值靠左对齐。</span></span><br></pre></td></tr></table></figure></p>
-<p>%f：代表浮点数内容(注意，在Python中浮点数是一个近似值，所以结果也是近似值）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'price %f'</span>%10.2)  <span class="comment">#输出10.200000</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'price %.1f'</span>%10.2)  <span class="comment">#输出10.2</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'prince %.1f'</span>%10.58)  <span class="comment">#输出10.6 当取一位小数位的时候，将小数位第二位进行舍入操作，但是Python的中间值不是5，导致当小数位第二位是5时，直接被舍去</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'%5.1f'</span>%10.3)  <span class="comment">#输出 10.3 输出了一个宽度为5的单位，其中整数3位，小数部分1位，小数点占一位</span></span><br></pre></td></tr></table></figure></p>
-<p>（3）格式化输出<br>在python3.0之后，推荐使用{0}来代替前期的%d、%s、%f等一系列格式化参数，采用了format函数进行处理。写法如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'今天毕业，乘坐&#123;0&#125;到&#123;1&#125;的高铁去工作。'</span>.format(<span class="string">'郑州'</span>,<span class="string">'北京'</span>))  <span class="comment">#其中&#123;0&#125;,&#123;1&#125;分别映射format()中的‘郑州’,’北京’,如果前面占位符中的索引值变化，那么他们映射的值也随之变化。</span></span><br></pre></td></tr></table></figure></p>
-<pre><code>---未完待续
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/11/Python/">展开全文 >></a>
         </p>
       
 
