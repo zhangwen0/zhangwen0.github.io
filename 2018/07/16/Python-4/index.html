@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | 张文的Python博客</title>
+  <title>Python学习笔记4 | 张文的Python博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Python">
-<meta property="og:type" content="website">
-<meta property="og:title" content="张文的Python博客">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="DAY2：条件语句、逻辑运算符、循环控制语句、range()函数 续Python学习笔记3 7、控制语句1）条件语句（1）单判断：格式：if 条件:        代码满足if的条件，则执行代码，不满足则跳过该段代码。例如：123#单判断if 5&amp;gt;4:    print(&apos;5&amp;gt;4&apos;)  #输出5&amp;gt;4 （2）双分支：格式：if 条件：        代码1     else:">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python学习笔记4">
+<meta property="og:url" content="http://yoursite.com/2018/07/16/Python-4/index.html">
 <meta property="og:site_name" content="张文的Python博客">
+<meta property="og:description" content="DAY2：条件语句、逻辑运算符、循环控制语句、range()函数 续Python学习笔记3 7、控制语句1）条件语句（1）单判断：格式：if 条件:        代码满足if的条件，则执行代码，不满足则跳过该段代码。例如：123#单判断if 5&amp;gt;4:    print(&apos;5&amp;gt;4&apos;)  #输出5&amp;gt;4 （2）双分支：格式：if 条件：        代码1     else:">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-16T12:47:24.860Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="张文的Python博客">
+<meta name="twitter:title" content="Python学习笔记4">
+<meta name="twitter:description" content="DAY2：条件语句、逻辑运算符、循环控制语句、range()函数 续Python学习笔记3 7、控制语句1）条件语句（1）单判断：格式：if 条件:        代码满足if的条件，则执行代码，不满足则跳过该段代码。例如：123#单判断if 5&amp;gt;4:    print(&apos;5&amp;gt;4&apos;)  #输出5&amp;gt;4 （2）双分支：格式：if 条件：        代码1     else:">
   
     <link rel="alternative" href="/atom.xml" title="张文的Python博客" type="application/atom+xml">
   
@@ -157,211 +161,178 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Python-4" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/16/for嵌套-三角形/" class="archive-article-date">
-  	<time datetime="2018-07-16T12:48:00.851Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-16</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/16/for嵌套-三角形/">使用for循环的嵌套，输出不同的三角形</a>
+    <h1 class="article-title" itemprop="name">
+      Python学习笔记4
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/16/Python-4/" class="archive-article-date">
+        
+        <a href="/2018/07/16/Python-4/" class="archive-article-date">
   	<time datetime="2018-07-16T10:40:56.203Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-16</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/16/Python-4/">Python学习笔记4</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>DAY2：条件语句、逻辑运算符、循环控制语句、range()函数</p>
+<p>续Python学习笔记3</p>
+<h3 id="7、控制语句"><a href="#7、控制语句" class="headerlink" title="7、控制语句"></a>7、控制语句</h3><h4 id="1）条件语句"><a href="#1）条件语句" class="headerlink" title="1）条件语句"></a>1）条件语句</h4><p>（1）单判断：<br>格式：if 条件:<br>        代码<br>满足if的条件，则执行代码，不满足则跳过该段代码。<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#单判断</span></span><br><span class="line"><span class="keyword">if</span> 5&gt;4:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'5&gt;4'</span>)  <span class="comment">#输出5&gt;4</span></span><br></pre></td></tr></table></figure></p>
+<p>（2）双分支：<br>格式：if 条件：<br>        代码1<br>     else:<br>        代码2<br>满足if的条件，则执行代码1，否则执行代码二<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#双分支判断</span></span><br><span class="line"><span class="keyword">if</span> 5&lt;4:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'5&lt;4'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'5不大于4'</span>)  <span class="comment">#输出5不大于4</span></span><br></pre></td></tr></table></figure></p>
+<p>（3）多分支：<br>if 条件1：<br>   代码1<br>elif 条件2：<br>   代码2<br>elif 条件3：<br>   代码3<br>…<br>else:<br>   代码4<br>满足条件1则执行代码1，满足条件2则执行代码2，满足条件3则执行代码3，均不满足，执行else的代码4<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#多分支判断</span></span><br><span class="line">x = 3</span><br><span class="line">y = 3</span><br><span class="line"><span class="keyword">if</span> x&gt;y:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'&#123;0&#125;大于&#123;1&#125;'</span>.format(x,y))</span><br><span class="line"><span class="keyword">elif</span> x==y:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'&#123;0&#125;等于&#123;1&#125;'</span>.format(x,y))</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'&#123;0&#125;小于&#123;1&#125;'</span>.format(x,y))  <span class="comment">#输出3=3</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="逻辑运算符：-and、or、not"><a href="#逻辑运算符：-and、or、not" class="headerlink" title="逻辑运算符： and、or、not"></a>逻辑运算符： and、or、not</h4><p>and:左右两端都是布尔型，其结果也为布尔型。同真才真，有假则假<br>or:左右两端都是布尔型，其结果也为布尔型。有真就真，同假才假<br>not：属于单目运算，其结果也是布尔型。求反，真变假，假变真<br>逻辑运算、比较运算常用在条件中使用。同时，这两种运算符经常配合使用。在Python解析器中，and、or、not运算都是从左往右运算的。我们使用True、False作为进行逻辑运算的元素，但根据Python的原理，认为已经赋值存在的内容是True。<br>注意：与True进行and运算：若有条件为假，返回False，有0也认为是假，但返回0，若所有条件都为真，则其结果都返回最右的值，是布尔型就返回True，不是布尔型返回值本身。<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">y=1  </span><br><span class="line">True and y <span class="comment">#输出 1 </span></span><br><span class="line">y=0  </span><br><span class="line">True and y <span class="comment">#输出 0</span></span><br><span class="line">y=1  </span><br><span class="line">y and True <span class="comment">#输出 True</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="3）循环控制语句"><a href="#3）循环控制语句" class="headerlink" title="3）循环控制语句"></a>3）循环控制语句</h4><h5 id="（1）for循环"><a href="#（1）for循环" class="headerlink" title="（1）for循环"></a>（1）for循环</h5><p>有两种方式：<br>第一种：（推荐）<br>格式：for 变量 in 集合：<br>          代码<br>说明：这种循环方式，我们称为快速迭代循环，能够对集合数据进行遍历。<br>注意：这种方式只能用在集合数据上，比如：字符串、列表、元组、字典等内容。<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">string1 = <span class="string">'hello world'</span></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> string1:</span><br><span class="line">	<span class="built_in">print</span>(item,end = <span class="string">' '</span>)  <span class="comment">#输出h e l l o   w o r l d </span></span><br><span class="line">list1 = [1, 3, <span class="string">'a'</span>, 4]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> list1:</span><br><span class="line">    <span class="built_in">print</span>(i,end = <span class="string">' '</span>)  <span class="comment">#输出1 3 a 4</span></span><br></pre></td></tr></table></figure></p>
+<p>第二种：（传统式）配合range()函数使用。通过range()函数指定了循环的范围。<br>格式：for i range(循环次数):<br>         代码<br>说明：这种循环方式，采用指定循环次数，对目标集合进行遍历。其做法主要是让循环与集合的下标同步，在循环次数时一同取出集合指定下标的对应值。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(4):</span><br><span class="line">	<span class="built_in">print</span>(list1[i],end = <span class="string">' '</span>)	<span class="comment">#输出1 3 a 4</span></span><br></pre></td></tr></table></figure></p>
+<p>range()函数：<br>函数格式：range(stop) :缺省情况下，表示从0开始，循环n次<br>         range(star,stop[,step])<br>其中，star：循环开始的值，stop：循环次数，step：循环步长。注意此处循环，会根据stop中的值循环规定的次数，但是显示时会从start位置开始。<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(3,10):</span><br><span class="line">	<span class="built_in">print</span>(i,end=<span class="string">' '</span>)  <span class="comment">#输出3 4 5 6 7 8 9 </span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(5,10):</span><br><span class="line">	<span class="built_in">print</span>(i,end=<span class="string">' '</span>)  <span class="comment">#输出5 6 7 8 9</span></span><br></pre></td></tr></table></figure></p>
+<p>for循环的常用方式：嵌套<br>for i in range(次数):<br>    代码1<br>    for j in range(次数):<br>        代码2<br>注意：在这种嵌套表示的过程中，变量的位置尤为重要，通用原则为：如果变量的值需要通过外层循环来获取或生成，那么我们可以将其设为全局变量，即与外层循环for同等级的变量，如果变量需要在内层循环中生成或获取，我们通常会在外循环中声明，即与内循环同级。</p>
+<h5 id="（2）while循环"><a href="#（2）while循环" class="headerlink" title="（2）while循环"></a>（2）while循环</h5><p>格式：while 条件：<br>           代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">num = 1</span><br><span class="line"><span class="keyword">while</span> num &lt;= 10:</span><br><span class="line">    <span class="built_in">print</span>(num,end = <span class="string">' '</span>) <span class="comment">#输出1 2 3 4 5 6 7 8 9 10</span></span><br><span class="line">    num+=1</span><br></pre></td></tr></table></figure></p>
+<p>使用while循环时应非常注意循环条件的设置，否则很有可能变成死循环。<br>for循环与while循环的区别：<br>1、for循环在使用时必须已知，或者能获得循环次数，而while循环则不需要准确的知道循环次数；<br>2、能使用for循环的语句一定可以转化成while循环，但是能使用while循环的语句，不一定能转换成for循环。</p>
+<h5 id="break与continue"><a href="#break与continue" class="headerlink" title="break与continue"></a>break与continue</h5><p>break：当满足指定条件时，break表示中断（中止）此循环，如果循环外部还有其他代码则继续向下执行。<br>continue：当满足指定条件时，continue表示结束本次循环，开始下一次循环。注意continue并没有退出循环。<br>同时，这两个关键字都是必须配合循环语句来使用，不能单独用在其他地方，比如：if</p>
+<p> –未完待续–</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/16/Python-4/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/16/Python-3/" class="archive-article-date">
-  	<time datetime="2018-07-16T00:46:11.703Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-16</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2018/07/16/for嵌套-三角形/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          使用for循环的嵌套，输出不同的三角形
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/07/16/Python-3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python学习笔记3</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/16/Python-3/">Python学习笔记3</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/13/Python-1/" class="archive-article-date">
-  	<time datetime="2018-07-13T01:12:18.252Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/13/Python-1/">Python学习笔记1</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/13/Python-2/" class="archive-article-date">
-  	<time datetime="2018-07-13T01:12:18.252Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/13/Python-2/">Python学习笔记2</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/12/游戏输出/" class="archive-article-date">
-  	<time datetime="2018-07-12T15:06:27.368Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/12/游戏输出/">游戏人物打BOSS1.0版</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/10/hello-world/" class="archive-article-date">
-  	<time datetime="2018-07-10T13:05:51.540Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/10/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -384,8 +355,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
