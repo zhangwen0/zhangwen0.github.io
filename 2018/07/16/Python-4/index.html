@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Python学习笔记4 | 张文的Python博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="DAY2：条件语句、逻辑运算符、循环控制语句、range()函数 续Python学习笔记3 7、控制语句1）条件语句（1）单判断：格式：if 条件:        代码满足if的条件，则执行代码，不满足则跳过该段代码。例如：123#单判断if 5&amp;gt;4:    print(&apos;5&amp;gt;4&apos;)  #输出5&amp;gt;4 （2）双分支：格式：if 条件：        代码1     else:">
+  <meta name="description" content="DAY4：条件语句、逻辑运算符、循环控制语句、range()函数 续Python学习笔记3 7、控制语句1）条件语句（1）单判断：格式：if 条件:        代码满足if的条件，则执行代码，不满足则跳过该段代码。例如：123#单判断if 5&amp;gt;4:    print(&apos;5&amp;gt;4&apos;)  #输出5&amp;gt;4 （2）双分支：格式：if 条件：        代码1     else:">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python学习笔记4">
 <meta property="og:url" content="http://yoursite.com/2018/07/16/Python-4/index.html">
 <meta property="og:site_name" content="张文的Python博客">
-<meta property="og:description" content="DAY2：条件语句、逻辑运算符、循环控制语句、range()函数 续Python学习笔记3 7、控制语句1）条件语句（1）单判断：格式：if 条件:        代码满足if的条件，则执行代码，不满足则跳过该段代码。例如：123#单判断if 5&amp;gt;4:    print(&apos;5&amp;gt;4&apos;)  #输出5&amp;gt;4 （2）双分支：格式：if 条件：        代码1     else:">
+<meta property="og:description" content="DAY4：条件语句、逻辑运算符、循环控制语句、range()函数 续Python学习笔记3 7、控制语句1）条件语句（1）单判断：格式：if 条件:        代码满足if的条件，则执行代码，不满足则跳过该段代码。例如：123#单判断if 5&amp;gt;4:    print(&apos;5&amp;gt;4&apos;)  #输出5&amp;gt;4 （2）双分支：格式：if 条件：        代码1     else:">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-16T12:47:24.860Z">
+<meta property="og:updated_time" content="2018-07-17T03:18:16.119Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python学习笔记4">
-<meta name="twitter:description" content="DAY2：条件语句、逻辑运算符、循环控制语句、range()函数 续Python学习笔记3 7、控制语句1）条件语句（1）单判断：格式：if 条件:        代码满足if的条件，则执行代码，不满足则跳过该段代码。例如：123#单判断if 5&amp;gt;4:    print(&apos;5&amp;gt;4&apos;)  #输出5&amp;gt;4 （2）双分支：格式：if 条件：        代码1     else:">
+<meta name="twitter:description" content="DAY4：条件语句、逻辑运算符、循环控制语句、range()函数 续Python学习笔记3 7、控制语句1）条件语句（1）单判断：格式：if 条件:        代码满足if的条件，则执行代码，不满足则跳过该段代码。例如：123#单判断if 5&amp;gt;4:    print(&apos;5&amp;gt;4&apos;)  #输出5&amp;gt;4 （2）双分支：格式：if 条件：        代码1     else:">
   
     <link rel="alternative" href="/atom.xml" title="张文的Python博客" type="application/atom+xml">
   
@@ -181,7 +181,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>DAY2：条件语句、逻辑运算符、循环控制语句、range()函数</p>
+        <p>DAY4：条件语句、逻辑运算符、循环控制语句、range()函数</p>
 <p>续Python学习笔记3</p>
 <h3 id="7、控制语句"><a href="#7、控制语句" class="headerlink" title="7、控制语句"></a>7、控制语句</h3><h4 id="1）条件语句"><a href="#1）条件语句" class="headerlink" title="1）条件语句"></a>1）条件语句</h4><p>（1）单判断：<br>格式：if 条件:<br>        代码<br>满足if的条件，则执行代码，不满足则跳过该段代码。<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#单判断</span></span><br><span class="line"><span class="keyword">if</span> 5&gt;4:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'5&gt;4'</span>)  <span class="comment">#输出5&gt;4</span></span><br></pre></td></tr></table></figure></p>
 <p>（2）双分支：<br>格式：if 条件：<br>        代码1<br>     else:<br>        代码2<br>满足if的条件，则执行代码1，否则执行代码二<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#双分支判断</span></span><br><span class="line"><span class="keyword">if</span> 5&lt;4:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'5&lt;4'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'5不大于4'</span>)  <span class="comment">#输出5不大于4</span></span><br></pre></td></tr></table></figure></p>
