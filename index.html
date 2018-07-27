@@ -159,6 +159,77 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-高阶函数练习题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/27/高阶函数练习题/">递归算法及高阶函数练习题</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/27/高阶函数练习题/" class="archive-article-date">
+  	<time datetime="2018-07-27T00:34:29.833Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、递归"><a href="#1、递归" class="headerlink" title="1、递归"></a>1、递归</h3><p>（1）使用递归算法计算[1,2,3,4,5]的和<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def mysum(q):</span><br><span class="line">    <span class="keyword">if</span> not q:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'1'</span>)</span><br><span class="line">        <span class="built_in">return</span>(0)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(q[0],q[1:],<span class="string">'1'</span>)    </span><br><span class="line">        <span class="built_in">return</span> q[0]+mysum(q[1:])</span><br><span class="line">b = mysum([1,2,3,4,5])</span><br><span class="line"><span class="built_in">print</span>(b)</span><br></pre></td></tr></table></figure></p>
+<p>（2）使用递归算法计算5！<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def mul(n):</span><br><span class="line">    <span class="keyword">if</span> n == 1:</span><br><span class="line">        <span class="built_in">return</span> 1</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">return</span> n*mul(n-1)</span><br><span class="line">f = mul(5)</span><br><span class="line"><span class="built_in">print</span>(f)</span><br></pre></td></tr></table></figure></p>
+<h3 id="2、高阶函数练习"><a href="#2、高阶函数练习" class="headerlink" title="2、高阶函数练习"></a>2、高阶函数练习</h3><p>（1）使用递归算法及reduce()函数计算1!+2!+3!+4!+5!<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">from functools import reduce</span><br><span class="line">def mul(n):</span><br><span class="line">    <span class="keyword">if</span> n == 1:</span><br><span class="line">        <span class="built_in">return</span> 1</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">return</span> n*mul(n-1)</span><br><span class="line">def f(x,y):</span><br><span class="line">    <span class="built_in">return</span> x+mul(y)</span><br><span class="line">m = reduce(f,[1,2,3,4,5])</span><br><span class="line"><span class="built_in">print</span>(m)</span><br></pre></td></tr></table></figure></p>
+<p>（2）编写一个函数，要求输入任意的正整数，得到1到这个整数之和。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from functools import reduce</span><br><span class="line">num = int(input(<span class="string">'请输入一个正整数：'</span>))</span><br><span class="line">my_sum = reduce(lambda x,y:x+y,range(1,num+1))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'1到&#123;0&#125;之和为：&#123;1&#125;'</span>.format(num,my_sum))</span><br></pre></td></tr></table></figure></p>
+<p>（3）输出元组(10,8,-1,100,200,35)的最大元素<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#方法一：</span></span><br><span class="line">tup = (10,8,-1,100,200,35)</span><br><span class="line">ls = list(tup)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(ls)-1):</span><br><span class="line">    <span class="keyword">if</span> ls[i] &gt; ls[i+1]:</span><br><span class="line">        ls[i],ls[i+1] = ls[i+1],ls[i]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'&#123;0&#125;中最大的元素是&#123;1&#125;'</span>.format(tup,ls[-1]))</span><br><span class="line"><span class="comment">#方法二：</span></span><br><span class="line">from functools import reduce</span><br><span class="line">tup = (10,8,-1,100,200,35)</span><br><span class="line">x = reduce(lambda x,y:x <span class="keyword">if</span> x&gt;y <span class="keyword">else</span> y,tup)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'&#123;0&#125;中最大的元素是&#123;1&#125;'</span>.format(tup,x))</span><br></pre></td></tr></table></figure></p>
+<p>（4）将下面数组中的奇数变成它的平方，偶数保持不变. X =[ 1,2,3,4,8,7, 22,33, 88 ]<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#方法一：</span></span><br><span class="line">x = [1,2,3,4,8,7,22,33,88]</span><br><span class="line">def uneven(i):</span><br><span class="line">    <span class="keyword">if</span> i % 2 == 0:</span><br><span class="line">        i = i</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        i*=i</span><br><span class="line">    <span class="built_in">return</span> i</span><br><span class="line">l = map(uneven,x)</span><br><span class="line"><span class="built_in">print</span>([i <span class="keyword">for</span> i <span class="keyword">in</span> l])</span><br><span class="line"><span class="comment">#方法二：</span></span><br><span class="line">x=[ 1,2,3,4,8,7, 22,33, 88 ]</span><br><span class="line">result=map(lambda x:x**2 <span class="keyword">if</span> x%2!=0  <span class="keyword">else</span> x,x)</span><br><span class="line"><span class="built_in">print</span>(list(result))</span><br></pre></td></tr></table></figure></p>
+<p>（5）求 Sn = 1 + 11 +111 + 1111+ ….   + 1111…111(最后一项是n个1)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#方法一递归：</span></span><br><span class="line">def sn(n):</span><br><span class="line">    <span class="keyword">if</span> n == 1:</span><br><span class="line">        <span class="built_in">return</span> 1</span><br><span class="line">    <span class="keyword">else</span>: </span><br><span class="line">        <span class="built_in">return</span> n+sn((n-1)//10)    </span><br><span class="line">num = int(input(<span class="string">'请输入最后一项1的个数：'</span>))</span><br><span class="line">s = 1</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(num-1):</span><br><span class="line">    s = s*10+1</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'Sn的值为：&#123;0&#125;'</span>.format(sn(s)))</span><br><span class="line"></span><br><span class="line"><span class="comment">#方法二循环：</span></span><br><span class="line">def sn(n):</span><br><span class="line">    sum = 0</span><br><span class="line">    s = 0</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">        s = s*10+1</span><br><span class="line">        sum += s</span><br><span class="line">    <span class="built_in">return</span> sum</span><br><span class="line">num = int(input(<span class="string">'请输入最后一项的1的个数：'</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'Sn的值为：&#123;0&#125;'</span>.format(sn(num)))</span><br></pre></td></tr></table></figure></p>
+<p>（6）数据表记录包含表索引和数值，请对表索引相同的记录进行合并，即将相同索引的数值进行求和运算，输出按照key值升序进行输出。<br>输入描述:先输入键值对的个数,然后输入成对的index和value值，以空格隔开<br>输出描述:输出合并后的键值对（多行）<br>示例1<br>输入<br>4<br>0 1<br>0 2<br>1 2<br>3 4<br>输出<br>0 3<br>1 2<br>3 4<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">dic = &#123;&#125;</span><br><span class="line">def my_sort(list1):   <span class="comment">#冒泡排序升序输出</span></span><br><span class="line">    <span class="keyword">for</span> m <span class="keyword">in</span> range(len(list1)):</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> range(m+1,len(list1)):</span><br><span class="line">            <span class="keyword">if</span> list1[m][0] &lt; list1[n][0]:</span><br><span class="line">                list1[m],list1[n] = list1[n],list1[m]</span><br><span class="line">    <span class="built_in">return</span> list1[::-1]</span><br><span class="line"></span><br><span class="line">msg = int(input(<span class="string">'请输入键值对个数：'</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'请输入成对的index和value值，以空格隔开'</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(msg):</span><br><span class="line">    kv = input()</span><br><span class="line">    k,v = map(int,kv.split())</span><br><span class="line">    <span class="keyword">if</span> k not <span class="keyword">in</span> dic.keys():  </span><br><span class="line">        dic[k] = v</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        dic[k] += v</span><br><span class="line">ls = my_sort(list(dic.items()))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'输出'</span>)</span><br><span class="line"><span class="keyword">for</span> i,j <span class="keyword">in</span> ls:</span><br><span class="line">    <span class="built_in">print</span>(i,j)</span><br></pre></td></tr></table></figure></p>
+<p>（7）将一个英文语句以单词为单位逆序排放。例如“I am a boy”，逆序排放后为“boy a am I”<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#方法一：</span></span><br><span class="line">def reverse(x):</span><br><span class="line">    ls = x.split()</span><br><span class="line">    ls = ls[::-1]</span><br><span class="line">    x = <span class="string">' '</span>.join(ls)</span><br><span class="line">    <span class="built_in">return</span> x</span><br><span class="line">word = input(<span class="string">'请输入一句英文：'</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'&#123;0&#125;的逆序句子是&#123;1&#125;'</span>.format(word,reverse(word)))</span><br><span class="line"></span><br><span class="line"><span class="comment">#方法二</span></span><br><span class="line">word = input(<span class="string">'请输入一句英文：'</span>)</span><br><span class="line">ls = []</span><br><span class="line">def my_split(s):</span><br><span class="line">    <span class="keyword">if</span> s.find(<span class="string">' '</span>) == -1:</span><br><span class="line">        ls.append(s)</span><br><span class="line">        <span class="built_in">return</span> ls</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        ls.append(s[0:s.find(<span class="string">' '</span>)])</span><br><span class="line">        <span class="built_in">return</span> my_split(s[s.find(<span class="string">' '</span>)+1:])</span><br><span class="line">str1 = <span class="string">' '</span>.join(my_split(word)[::-1])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'&#123;0&#125;的逆序句子是&#123;1&#125;'</span>.format(word,str1))</span><br><span class="line"></span><br><span class="line"><span class="comment">#方法三：</span></span><br><span class="line">word = input(<span class="string">'请输入一句英文：'</span>)</span><br><span class="line">def my_split(s):</span><br><span class="line">    ls = []</span><br><span class="line">    a = 0</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)):</span><br><span class="line">        <span class="keyword">if</span> s[i] == <span class="string">' '</span>:</span><br><span class="line">            ls.append(s[a:i])</span><br><span class="line">            a = i+1</span><br><span class="line">        <span class="keyword">if</span> i == len(s)-1:</span><br><span class="line">            ls.append(s[a:])</span><br><span class="line">    ls = ls[::-1]</span><br><span class="line">    str1 = <span class="string">' '</span>.join(ls)</span><br><span class="line">    <span class="built_in">return</span> str1</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'&#123;0&#125;的逆序句子是&#123;1&#125;'</span>.format(word,my_split(word)))</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/27/高阶函数练习题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-登录界面函数版" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -784,82 +855,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/07/16/for嵌套-三角形/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/16/Python-4/">Python学习笔记4</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/16/Python-4/" class="archive-article-date">
-  	<time datetime="2018-07-16T10:40:56.203Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>DAY4：条件语句、逻辑运算符、循环控制语句、range()函数</p>
-<p>续Python学习笔记3</p>
-<h3 id="7、控制语句"><a href="#7、控制语句" class="headerlink" title="7、控制语句"></a>7、控制语句</h3><h4 id="1）条件语句"><a href="#1）条件语句" class="headerlink" title="1）条件语句"></a>1）条件语句</h4><p>（1）单判断：<br>格式：if 条件:<br>        代码<br>满足if的条件，则执行代码，不满足则跳过该段代码。<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#单判断</span></span><br><span class="line"><span class="keyword">if</span> 5&gt;4:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'5&gt;4'</span>)  <span class="comment">#输出5&gt;4</span></span><br></pre></td></tr></table></figure></p>
-<p>（2）双分支：<br>格式：if 条件：<br>        代码1<br>     else:<br>        代码2<br>满足if的条件，则执行代码1，否则执行代码二<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#双分支判断</span></span><br><span class="line"><span class="keyword">if</span> 5&lt;4:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'5&lt;4'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'5不大于4'</span>)  <span class="comment">#输出5不大于4</span></span><br></pre></td></tr></table></figure></p>
-<p>（3）多分支：<br>if 条件1：<br>   代码1<br>elif 条件2：<br>   代码2<br>elif 条件3：<br>   代码3<br>…<br>else:<br>   代码4<br>满足条件1则执行代码1，满足条件2则执行代码2，满足条件3则执行代码3，均不满足，执行else的代码4<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#多分支判断</span></span><br><span class="line">x = 3</span><br><span class="line">y = 3</span><br><span class="line"><span class="keyword">if</span> x&gt;y:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'&#123;0&#125;大于&#123;1&#125;'</span>.format(x,y))</span><br><span class="line"><span class="keyword">elif</span> x==y:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'&#123;0&#125;等于&#123;1&#125;'</span>.format(x,y))</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'&#123;0&#125;小于&#123;1&#125;'</span>.format(x,y))  <span class="comment">#输出3=3</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="逻辑运算符：-and、or、not"><a href="#逻辑运算符：-and、or、not" class="headerlink" title="逻辑运算符： and、or、not"></a>逻辑运算符： and、or、not</h4><p>and:左右两端都是布尔型，其结果也为布尔型。同真才真，有假则假<br>or:左右两端都是布尔型，其结果也为布尔型。有真就真，同假才假<br>not：属于单目运算，其结果也是布尔型。求反，真变假，假变真<br>逻辑运算、比较运算常用在条件中使用。同时，这两种运算符经常配合使用。在Python解析器中，and、or、not运算都是从左往右运算的。我们使用True、False作为进行逻辑运算的元素，但根据Python的原理，认为已经赋值存在的内容是True。<br>注意：与True进行and运算：若有条件为假，返回False，有0也认为是假，但返回0，若所有条件都为真，则其结果都返回最右的值，是布尔型就返回True，不是布尔型返回值本身。<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">y=1  </span><br><span class="line">True and y <span class="comment">#输出 1 </span></span><br><span class="line">y=0  </span><br><span class="line">True and y <span class="comment">#输出 0</span></span><br><span class="line">y=1  </span><br><span class="line">y and True <span class="comment">#输出 True</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="3）循环控制语句"><a href="#3）循环控制语句" class="headerlink" title="3）循环控制语句"></a>3）循环控制语句</h4><h5 id="（1）for循环"><a href="#（1）for循环" class="headerlink" title="（1）for循环"></a>（1）for循环</h5><p>有两种方式：<br>第一种：（推荐）<br>格式：for 变量 in 集合：<br>          代码<br>说明：这种循环方式，我们称为快速迭代循环，能够对集合数据进行遍历。<br>注意：这种方式只能用在集合数据上，比如：字符串、列表、元组、字典等内容。<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">string1 = <span class="string">'hello world'</span></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> string1:</span><br><span class="line">	<span class="built_in">print</span>(item,end = <span class="string">' '</span>)  <span class="comment">#输出h e l l o   w o r l d </span></span><br><span class="line">list1 = [1, 3, <span class="string">'a'</span>, 4]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> list1:</span><br><span class="line">    <span class="built_in">print</span>(i,end = <span class="string">' '</span>)  <span class="comment">#输出1 3 a 4</span></span><br></pre></td></tr></table></figure></p>
-<p>第二种：（传统式）配合range()函数使用。通过range()函数指定了循环的范围。<br>格式：for i range(循环次数):<br>         代码<br>说明：这种循环方式，采用指定循环次数，对目标集合进行遍历。其做法主要是让循环与集合的下标同步，在循环次数时一同取出集合指定下标的对应值。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(4):</span><br><span class="line">	<span class="built_in">print</span>(list1[i],end = <span class="string">' '</span>)	<span class="comment">#输出1 3 a 4</span></span><br></pre></td></tr></table></figure></p>
-<p>range()函数：<br>函数格式：range(stop) :缺省情况下，表示从0开始，循环n次<br>         range(star,stop[,step])<br>其中，star：循环开始的值，stop：循环次数，step：循环步长。注意此处循环，会根据stop中的值循环规定的次数，但是显示时会从start位置开始。<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(3,10):</span><br><span class="line">	<span class="built_in">print</span>(i,end=<span class="string">' '</span>)  <span class="comment">#输出3 4 5 6 7 8 9 </span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(5,10):</span><br><span class="line">	<span class="built_in">print</span>(i,end=<span class="string">' '</span>)  <span class="comment">#输出5 6 7 8 9</span></span><br></pre></td></tr></table></figure></p>
-<p>for循环的常用方式：嵌套<br>for i in range(次数):<br>    代码1<br>    for j in range(次数):<br>        代码2<br>注意：在这种嵌套表示的过程中，变量的位置尤为重要，通用原则为：如果变量的值需要通过外层循环来获取或生成，那么我们可以将其设为全局变量，即与外层循环for同等级的变量，如果变量需要在内层循环中生成或获取，我们通常会在外循环中声明，即与内循环同级。</p>
-<h5 id="（2）while循环"><a href="#（2）while循环" class="headerlink" title="（2）while循环"></a>（2）while循环</h5><p>格式：while 条件：<br>           代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">num = 1</span><br><span class="line"><span class="keyword">while</span> num &lt;= 10:</span><br><span class="line">    <span class="built_in">print</span>(num,end = <span class="string">' '</span>) <span class="comment">#输出1 2 3 4 5 6 7 8 9 10</span></span><br><span class="line">    num+=1</span><br></pre></td></tr></table></figure></p>
-<p>使用while循环时应非常注意循环条件的设置，否则很有可能变成死循环。<br>for循环与while循环的区别：<br>1、for循环在使用时必须已知，或者能获得循环次数，而while循环则不需要准确的知道循环次数；<br>2、能使用for循环的语句一定可以转化成while循环，但是能使用while循环的语句，不一定能转换成for循环。</p>
-<h5 id="break与continue"><a href="#break与continue" class="headerlink" title="break与continue"></a>break与continue</h5><p>break：当满足指定条件时，break表示中断（中止）此循环，如果循环外部还有其他代码则继续向下执行。<br>continue：当满足指定条件时，continue表示结束本次循环，开始下一次循环。注意continue并没有退出循环。<br>同时，这两个关键字都是必须配合循环语句来使用，不能单独用在其他地方，比如：if</p>
-<p> –未完待续–</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/16/Python-4/">展开全文 >></a>
         </p>
       
 
