@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>简单ATM系统 | 张文的Python博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、编写一个ATM取款机，功能，界面如下    1). 注册新用户    2). 取款    3). 存款 #4). 转账 4). 查询余额 5). 冻结账户 6). 修改密码 7). 退出 8）.登陆 1、注册用户，并存入本地文件count.txt中。其中文件格式如下：   用户名   密码    账户余额    状态    tom     1234    100000      正常其中，注册">
+  <meta name="description" content="一、编写一个ATM取款机，功能，界面如下    1). 注册新用户    2). 取款    3). 存款    4). 查询余额    5). 冻结账户    6). 修改密码    7). 退出    8）.登陆1、注册用户，并存入本地文件count.txt中。其中文件格式如下：   用户名   密码    账户余额    状态    tom     1234    100000      正">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="简单ATM系统">
 <meta property="og:url" content="http://yoursite.com/2018/07/28/简单ATM/index.html">
 <meta property="og:site_name" content="张文的Python博客">
-<meta property="og:description" content="一、编写一个ATM取款机，功能，界面如下    1). 注册新用户    2). 取款    3). 存款 #4). 转账 4). 查询余额 5). 冻结账户 6). 修改密码 7). 退出 8）.登陆 1、注册用户，并存入本地文件count.txt中。其中文件格式如下：   用户名   密码    账户余额    状态    tom     1234    100000      正常其中，注册">
+<meta property="og:description" content="一、编写一个ATM取款机，功能，界面如下    1). 注册新用户    2). 取款    3). 存款    4). 查询余额    5). 冻结账户    6). 修改密码    7). 退出    8）.登陆1、注册用户，并存入本地文件count.txt中。其中文件格式如下：   用户名   密码    账户余额    状态    tom     1234    100000      正">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-28T09:27:02.673Z">
+<meta property="og:updated_time" content="2018-07-28T09:30:24.521Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单ATM系统">
-<meta name="twitter:description" content="一、编写一个ATM取款机，功能，界面如下    1). 注册新用户    2). 取款    3). 存款 #4). 转账 4). 查询余额 5). 冻结账户 6). 修改密码 7). 退出 8）.登陆 1、注册用户，并存入本地文件count.txt中。其中文件格式如下：   用户名   密码    账户余额    状态    tom     1234    100000      正常其中，注册">
+<meta name="twitter:description" content="一、编写一个ATM取款机，功能，界面如下    1). 注册新用户    2). 取款    3). 存款    4). 查询余额    5). 冻结账户    6). 修改密码    7). 退出    8）.登陆1、注册用户，并存入本地文件count.txt中。其中文件格式如下：   用户名   密码    账户余额    状态    tom     1234    100000      正">
   
     <link rel="alternative" href="/atom.xml" title="张文的Python博客" type="application/atom+xml">
   
@@ -181,14 +181,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>一、编写一个ATM取款机，功能，界面如下<br>    1). 注册新用户<br>    2). 取款<br>    3). 存款</p>
-<pre><code>#4). 转账
-4). 查询余额
-5). 冻结账户
-6). 修改密码
-7). 退出
-8）.登陆
-</code></pre><p>1、注册用户，并存入本地文件count.txt中。其中文件格式如下：<br>   用户名   密码    账户余额    状态<br>    tom     1234    100000      正常<br>其中，注册新用户时，默认账户余额为100元、状态为正常。<br>2、取款、存款时都需要验证用户身份<br>3、取款的金额必须小于账户余额<br>4、冻结账户为修改账户状态为冻结<br>5、修改密码时，需要验证原密码后，方能修改</p>
+        <p>一、编写一个ATM取款机，功能，界面如下<br>    1). 注册新用户<br>    2). 取款<br>    3). 存款<br>    4). 查询余额<br>    5). 冻结账户<br>    6). 修改密码<br>    7). 退出<br>    8）.登陆<br>1、注册用户，并存入本地文件count.txt中。其中文件格式如下：<br>   用户名   密码    账户余额    状态<br>    tom     1234    100000      正常<br>其中，注册新用户时，默认账户余额为100元、状态为正常。<br>2、取款、存款时都需要验证用户身份<br>3、取款的金额必须小于账户余额<br>4、冻结账户为修改账户状态为冻结<br>5、修改密码时，需要验证原密码后，方能修改</p>
 <p>二、修改上述的ATM取款系统，要求如下:<br>1). 每个选项操作前，显示用户欢迎信息;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">eg： <span class="string">"***************ATM系统转账操作***************"</span></span><br><span class="line">eg： <span class="string">"***************ATM系统存款操作***************"</span></span><br></pre></td></tr></table></figure></p>
 <p>2). 用户执行操作前显示操作时间；<br>3). 用户执行后显示结束时间;<br>4).要求时间格式不是时间戳，而是我们可以看懂的即（YYYY-MM-DD）;</p>
 <p>1、要求使用日志，进行记录<br>2、采用装饰器进行日志的记录</p>
