@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | 张文的Python博客</title>
+  <title>简单ATM系统 | 张文的Python博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Python">
-<meta property="og:type" content="website">
-<meta property="og:title" content="张文的Python博客">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="一、编写一个ATM取款机，功能，界面如下    1). 注册新用户    2). 取款    3). 存款 #4). 转账 4). 查询余额 5). 冻结账户 6). 修改密码 7). 退出 8）.登陆 1、注册用户，并存入本地文件count.txt中。其中文件格式如下：   用户名   密码    账户余额    状态    tom     1234    100000      正常其中，注册">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简单ATM系统">
+<meta property="og:url" content="http://yoursite.com/2018/07/28/简单ATM/index.html">
 <meta property="og:site_name" content="张文的Python博客">
+<meta property="og:description" content="一、编写一个ATM取款机，功能，界面如下    1). 注册新用户    2). 取款    3). 存款 #4). 转账 4). 查询余额 5). 冻结账户 6). 修改密码 7). 退出 8）.登陆 1、注册用户，并存入本地文件count.txt中。其中文件格式如下：   用户名   密码    账户余额    状态    tom     1234    100000      正常其中，注册">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-28T09:27:02.673Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="张文的Python博客">
+<meta name="twitter:title" content="简单ATM系统">
+<meta name="twitter:description" content="一、编写一个ATM取款机，功能，界面如下    1). 注册新用户    2). 取款    3). 存款 #4). 转账 4). 查询余额 5). 冻结账户 6). 修改密码 7). 退出 8）.登陆 1、注册用户，并存入本地文件count.txt中。其中文件格式如下：   用户名   密码    账户余额    状态    tom     1234    100000      正常其中，注册">
   
     <link rel="alternative" href="/atom.xml" title="张文的Python博客" type="application/atom+xml">
   
@@ -157,295 +161,166 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-简单ATM" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      简单ATM系统
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/28/简单ATM/" class="archive-article-date">
+
+        
+        <a href="/2018/07/28/简单ATM/" class="archive-article-date">
   	<time datetime="2018-07-28T09:19:52.364Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-28</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/28/简单ATM/">简单ATM系统</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、编写一个ATM取款机，功能，界面如下<br>    1). 注册新用户<br>    2). 取款<br>    3). 存款</p>
+<pre><code>#4). 转账
+4). 查询余额
+5). 冻结账户
+6). 修改密码
+7). 退出
+8）.登陆
+</code></pre><p>1、注册用户，并存入本地文件count.txt中。其中文件格式如下：<br>   用户名   密码    账户余额    状态<br>    tom     1234    100000      正常<br>其中，注册新用户时，默认账户余额为100元、状态为正常。<br>2、取款、存款时都需要验证用户身份<br>3、取款的金额必须小于账户余额<br>4、冻结账户为修改账户状态为冻结<br>5、修改密码时，需要验证原密码后，方能修改</p>
+<p>二、修改上述的ATM取款系统，要求如下:<br>1). 每个选项操作前，显示用户欢迎信息;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">eg： <span class="string">"***************ATM系统转账操作***************"</span></span><br><span class="line">eg： <span class="string">"***************ATM系统存款操作***************"</span></span><br></pre></td></tr></table></figure></p>
+<p>2). 用户执行操作前显示操作时间；<br>3). 用户执行后显示结束时间;<br>4).要求时间格式不是时间戳，而是我们可以看懂的即（YYYY-MM-DD）;</p>
+<p>1、要求使用日志，进行记录<br>2、采用装饰器进行日志的记录</p>
+<p>代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">''</span><span class="string">'</span></span><br><span class="line"><span class="string">时间：2018.07.28</span></span><br><span class="line"><span class="string">作者：张文</span></span><br><span class="line"><span class="string">用途：一个简单的ATM机</span></span><br><span class="line"><span class="string">bug：</span></span><br><span class="line"><span class="string">1、用户执行操作前显示操作时间未能使用装饰器实现，仅实现了用户执行后显示结束时间</span></span><br><span class="line"><span class="string">2、输入金额必须为整数，否则显示存取款失败</span></span><br><span class="line"><span class="string">'</span><span class="string">''</span></span><br><span class="line">import time</span><br><span class="line">import logging</span><br><span class="line">import os</span><br><span class="line">def <span class="built_in">log</span>(msg):</span><br><span class="line">    logger = logging.getLogger(<span class="string">'pythonlogger'</span>)</span><br><span class="line">    logger.setLevel(logging.INFO)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#创建一个handler，用来将日志内容存入文件中</span></span><br><span class="line">    file = logging.FileHandler(<span class="string">'test.log'</span>)</span><br><span class="line">    file.setLevel(logging.INFO)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#创建一个handler，用来将日志输出到控制台</span></span><br><span class="line">    console = logging.StreamHandler()</span><br><span class="line">    console.setLevel(logging.INFO)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#定义日志输出格式</span></span><br><span class="line">    formatter = logging.Formatter(<span class="string">'%(asctime)s - %(name)s - %(levelname)s - %(message)s'</span>)</span><br><span class="line">    file.setFormatter(formatter)</span><br><span class="line">    console.setFormatter(formatter)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#将logger添加到handler</span></span><br><span class="line">    logger.addHandler(file)</span><br><span class="line">    logger.addHandler(console)</span><br><span class="line">    logger.info(msg)</span><br><span class="line">    logger.removeHandler(file)</span><br><span class="line">    logger.removeHandler(console)</span><br><span class="line"></span><br><span class="line">def mylogger(f):       <span class="comment">#日志记录</span></span><br><span class="line">    def inner(*var):</span><br><span class="line">        <span class="keyword">if</span> f(*var):</span><br><span class="line">            <span class="built_in">log</span>(f.__name__+<span class="string">'操作成功'</span>)</span><br><span class="line">            flag = True</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">log</span>(f.__name__+<span class="string">'操作失败'</span>)</span><br><span class="line">            flag = False</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'当前时间：&#123;0&#125;'</span>.format(time.strftime(<span class="string">'%Y-%m-%d %H:%M:%S'</span>,time.localtime())))  <span class="comment">#输出当前时间</span></span><br><span class="line">        <span class="built_in">return</span> flag</span><br><span class="line">    <span class="built_in">return</span> inner</span><br><span class="line"></span><br><span class="line">def menu():    <span class="comment">#输出菜单</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'1、注册新用户'</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'2、取款'</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'3、存款'</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'4、查询余额'</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'5、冻结账户'</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'6、修改密码'</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'7、退出程序'</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'8、登陆'</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'9、注销'</span>)</span><br><span class="line"></span><br><span class="line">def is_exist():   <span class="comment">#判断该文件是否存在</span></span><br><span class="line">    <span class="keyword">if</span> os.path.exists(<span class="string">'count.txt'</span>):</span><br><span class="line">        pass</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        file = open(<span class="string">'count.txt'</span>,<span class="string">'a+'</span>,encoding = <span class="string">'UTF-8'</span>)  <span class="comment">#不存在则创建，并将用户名 密码 账户余额 状态输入到文件</span></span><br><span class="line">        file.write(<span class="string">'用户名 密码 账户余额 状态\n'</span>)</span><br><span class="line">        file.close()</span><br><span class="line"></span><br><span class="line">def read_file():   <span class="comment">#读取count.txt.中的信息，并将其中的信息返回</span></span><br><span class="line">    temp_list = []</span><br><span class="line">    file = open(<span class="string">'count.txt'</span>,<span class="string">'r'</span>,encoding = <span class="string">'UTF-8'</span>)</span><br><span class="line">    msg = file.readline()</span><br><span class="line">    ls1 = msg.split()</span><br><span class="line">    <span class="keyword">while</span> True:</span><br><span class="line">        msg = file.readline()  <span class="comment">#逐行读取信息</span></span><br><span class="line">        <span class="keyword">if</span> msg == <span class="string">''</span>:</span><br><span class="line">            <span class="built_in">break</span></span><br><span class="line">        ls = msg.split()</span><br><span class="line">        dic = dict(zip(ls1,ls))  <span class="comment">#将读出的信息生成一个字典</span></span><br><span class="line">        temp_list.append(dic)  <span class="comment">#将字典添加到临时列表中</span></span><br><span class="line">    file.close()</span><br><span class="line">    <span class="built_in">return</span> temp_list  <span class="comment">#返回该列表</span></span><br><span class="line"></span><br><span class="line">def write_file(lis):  <span class="comment">#将信息写入count.txt中</span></span><br><span class="line">    file = open(<span class="string">'count.txt'</span>,<span class="string">'w'</span>,encoding = <span class="string">'UTF-8'</span>)</span><br><span class="line">    file.write(<span class="string">' '</span>.join(lis[0].keys())+<span class="string">'\n'</span>)   <span class="comment">#写入文件的第一行用户名 密码 账户余额 状态</span></span><br><span class="line">    file.close()</span><br><span class="line">    file = open(<span class="string">'count.txt'</span>,<span class="string">'a+'</span>,encoding = <span class="string">'UTF-8'</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> lis:</span><br><span class="line">        file.write(<span class="string">' '</span>.join(i.values())+<span class="string">'\n'</span>)   <span class="comment">#循环将字典中的内容以字符串形式存入文件</span></span><br><span class="line">    file.close()</span><br><span class="line"></span><br><span class="line">@mylogger</span><br><span class="line">def register(name,password):   <span class="comment">#注册新用户</span></span><br><span class="line">    lis = read_file()   <span class="comment">#从文件中读出所有信息，放入列表</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> lis:</span><br><span class="line">        <span class="keyword">if</span> name == i[<span class="string">'用户名'</span>]:   <span class="comment">#用户名已存在</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'该用户名已存在！'</span>)</span><br><span class="line">            <span class="built_in">return</span> False</span><br><span class="line">    file = open(<span class="string">'count.txt'</span>,<span class="string">'a+'</span>,encoding = <span class="string">'UTF-8'</span>)   </span><br><span class="line">    msg = name + <span class="string">' '</span> + password + <span class="string">' '</span> + <span class="string">'100 正常'</span></span><br><span class="line">    file.write(msg+<span class="string">'\n'</span>)   <span class="comment">#用户名不存在则添加文件中</span></span><br><span class="line">    file.close()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'注册成功！'</span>)</span><br><span class="line">    <span class="built_in">return</span> True</span><br><span class="line"></span><br><span class="line">@mylogger</span><br><span class="line">def withdrawal(msg,money,user_msg):   <span class="comment">#取款</span></span><br><span class="line">    <span class="keyword">if</span> msg == user_msg[<span class="string">'密码'</span>] and money.isdigit():   <span class="comment">#密码正确且金额格式正确</span></span><br><span class="line">        <span class="keyword">if</span> int(money) &gt; int(user_msg[<span class="string">'账户余额'</span>]):   <span class="comment">#取款金额大于账户余额则失败</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'余额不足！取款失败！'</span>)</span><br><span class="line">            flag = False</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            user_msg[<span class="string">'账户余额'</span>] = str(int(user_msg[<span class="string">'账户余额'</span>])-int(money))</span><br><span class="line">            lis = read_file()</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> lis:</span><br><span class="line">                <span class="keyword">if</span> user_msg[<span class="string">'用户名'</span>] == i[<span class="string">'用户名'</span>]:</span><br><span class="line">                    i[<span class="string">'账户余额'</span>] = user_msg[<span class="string">'账户余额'</span>]   <span class="comment">#修改该账户余额 </span></span><br><span class="line">                    <span class="built_in">break</span></span><br><span class="line">            write_file(lis)  <span class="comment">#将修改后的列表写入文件</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'取款成功！'</span>)</span><br><span class="line">            flag = True</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'密码或金额错误！取款失败'</span>)</span><br><span class="line">        flag = False</span><br><span class="line">    <span class="built_in">return</span> flag</span><br><span class="line"></span><br><span class="line">@mylogger</span><br><span class="line">def deposit(msg,money,user_msg):   <span class="comment">#存款</span></span><br><span class="line">    <span class="keyword">if</span>  msg == user_msg[<span class="string">'密码'</span>] and money.isdigit():   <span class="comment">#密码及金额格式正确</span></span><br><span class="line">        user_msg[<span class="string">'账户余额'</span>] = str(int(user_msg[<span class="string">'账户余额'</span>])+int(money))   <span class="comment">#修改用户状态字典的余额</span></span><br><span class="line">        lis = read_file()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> lis:</span><br><span class="line">            <span class="keyword">if</span> user_msg[<span class="string">'用户名'</span>] == i[<span class="string">'用户名'</span>]:</span><br><span class="line">                i[<span class="string">'账户余额'</span>] = user_msg[<span class="string">'账户余额'</span>]  <span class="comment">#修改列表中该账户的余额</span></span><br><span class="line">                <span class="built_in">break</span></span><br><span class="line">        write_file(lis)  <span class="comment">#将修改后的列表写入文件</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'存款成功！'</span>)</span><br><span class="line">        flag = True</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'密码或金额错误，存款失败！'</span>)</span><br><span class="line">        flag = False</span><br><span class="line">    <span class="built_in">return</span> flag</span><br><span class="line"></span><br><span class="line">@mylogger</span><br><span class="line">def find():</span><br><span class="line">    <span class="keyword">if</span> user_msg == &#123;&#125;:  <span class="comment">#用户状态字典为空，则未登录，查询失败</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'您未登陆，余额查询失败！'</span>)  </span><br><span class="line">        flag = False</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'您的余额为：&#123;0&#125;元'</span>.format(user_msg[<span class="string">'账户余额'</span>]))</span><br><span class="line">        flag = True</span><br><span class="line">    <span class="built_in">return</span> flag</span><br><span class="line"></span><br><span class="line">@mylogger</span><br><span class="line">def freeze(msg,user_msg):    <span class="comment">#冻结解冻账户</span></span><br><span class="line">    <span class="keyword">if</span> msg == <span class="string">'y'</span>:</span><br><span class="line">        <span class="keyword">if</span> user_msg[<span class="string">'状态'</span>] == <span class="string">'正常'</span>:   <span class="comment">#若用户本来状态为正常，则冻结该账户</span></span><br><span class="line">            user_msg[<span class="string">'状态'</span>] = <span class="string">'冻结'</span></span><br><span class="line">            lis = read_file()</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> lis:</span><br><span class="line">                <span class="keyword">if</span> user_msg[<span class="string">'用户名'</span>] == i[<span class="string">'用户名'</span>]:  <span class="comment">#修改列表中该账户状态</span></span><br><span class="line">                    i[<span class="string">'状态'</span>] = user_msg[<span class="string">'状态'</span>]</span><br><span class="line">                    <span class="built_in">break</span></span><br><span class="line">            write_file(lis)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'账户冻结成功！'</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            user_msg[<span class="string">'状态'</span>] = <span class="string">'正常'</span>  <span class="comment">#否则解冻该账户</span></span><br><span class="line">            lis = read_file()</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> lis:</span><br><span class="line">                <span class="keyword">if</span> user_msg[<span class="string">'用户名'</span>] == i[<span class="string">'用户名'</span>]:    </span><br><span class="line">                    i[<span class="string">'状态'</span>] = user_msg[<span class="string">'状态'</span>]     <span class="comment">#修改列表中该账户状态</span></span><br><span class="line">                    <span class="built_in">break</span></span><br><span class="line">            write_file(lis)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'账户解冻成功！'</span>)</span><br><span class="line">        flag = True</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'冻结/解冻账户操作失败！'</span>)   <span class="comment">#若用户输入n操作失败</span></span><br><span class="line">        flag = False</span><br><span class="line">    <span class="built_in">return</span> flag</span><br><span class="line"></span><br><span class="line">@mylogger</span><br><span class="line">def change():   <span class="comment">#修改密码</span></span><br><span class="line">    msg = input(<span class="string">'请输入原密码：'</span>)   <span class="comment">#输入原密码</span></span><br><span class="line">    <span class="keyword">if</span> msg == user_msg[<span class="string">'密码'</span>]:   <span class="comment">#原密码正确，输入新密码</span></span><br><span class="line">        msg = input(<span class="string">'请输入新密码：'</span>)</span><br><span class="line">        user_msg[<span class="string">'密码'</span>] = msg   <span class="comment">#修改用户状态中记录的密码</span></span><br><span class="line">        lis = read_file()   <span class="comment">#读出文件中所有内容，放入列表</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> lis:</span><br><span class="line">            <span class="keyword">if</span> user_msg[<span class="string">'用户名'</span>] == i[<span class="string">'用户名'</span>]:   <span class="comment">#修改列表中该用户的密码</span></span><br><span class="line">                i[<span class="string">'密码'</span>] = user_msg[<span class="string">'密码'</span>]</span><br><span class="line">                <span class="built_in">break</span></span><br><span class="line">        write_file(lis)   <span class="comment">#将修改后的列表写入文件</span></span><br><span class="line">        user_msg.clear()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'密码修改成功，请使用新密码重新登陆！'</span>)</span><br><span class="line">        flag = True</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'原密码输入有误！'</span>)  <span class="comment">#原密码有误操作失败</span></span><br><span class="line">        flag = False</span><br><span class="line">    <span class="built_in">return</span> flag</span><br><span class="line"></span><br><span class="line">def quit():  <span class="comment">#退出</span></span><br><span class="line">    os.system(<span class="string">'cls'</span>)</span><br><span class="line">    <span class="built_in">exit</span>()</span><br><span class="line"></span><br><span class="line">@mylogger</span><br><span class="line">def load(name,password):   <span class="comment">#登陆账户</span></span><br><span class="line">    lis = read_file()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> lis:</span><br><span class="line">        <span class="keyword">if</span> name == i[<span class="string">'用户名'</span>] and password == i[<span class="string">'密码'</span>]:   <span class="comment">#用户名与密码均正确</span></span><br><span class="line">            user_msg[<span class="string">'用户名'</span>] = name    <span class="comment">#将该用户的登录信息及状态记录到字典中</span></span><br><span class="line">            user_msg[<span class="string">'密码'</span>] = password</span><br><span class="line">            user_msg[<span class="string">'账户余额'</span>] = i[<span class="string">'账户余额'</span>]</span><br><span class="line">            user_msg[<span class="string">'状态'</span>] = i[<span class="string">'状态'</span>]</span><br><span class="line">            <span class="built_in">return</span> True</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'用户名或密码错误！'</span>)  <span class="comment">#用户名或密码错误，登录失败</span></span><br><span class="line">    <span class="built_in">return</span> False</span><br><span class="line"></span><br><span class="line">@mylogger</span><br><span class="line">def <span class="built_in">logout</span>():    <span class="comment">#注销账户</span></span><br><span class="line">    <span class="keyword">if</span> user_msg == &#123;&#125;:   <span class="comment">#用户状态字典为空，用户未登录，注销失败</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'您还未登陆'</span>)</span><br><span class="line">        flag = False</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        user_msg.clear()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'注销成功！'</span>) </span><br><span class="line">        flag = True</span><br><span class="line">    <span class="built_in">return</span> flag</span><br><span class="line"></span><br><span class="line">def now(msg):   <span class="comment">#输出欢迎信息与开始操作时间</span></span><br><span class="line">    <span class="keyword">if</span> msg == <span class="string">'1'</span>:</span><br><span class="line">        msg = <span class="string">'注册'</span></span><br><span class="line">    <span class="keyword">elif</span> msg == <span class="string">'2'</span>:</span><br><span class="line">        msg = <span class="string">'取款'</span></span><br><span class="line">    <span class="keyword">elif</span> msg == <span class="string">'3'</span>:</span><br><span class="line">        msg = <span class="string">'存款'</span></span><br><span class="line">    <span class="keyword">elif</span> msg == <span class="string">'4'</span>:</span><br><span class="line">        msg = <span class="string">'查询'</span></span><br><span class="line">    <span class="keyword">elif</span> msg == <span class="string">'5'</span>:</span><br><span class="line">        msg = <span class="string">'冻结'</span></span><br><span class="line">    <span class="keyword">elif</span> msg == <span class="string">'6'</span>:</span><br><span class="line">        msg = <span class="string">'修改密码'</span></span><br><span class="line">    <span class="keyword">elif</span> msg ==<span class="string">'8'</span>:</span><br><span class="line">        msg = <span class="string">'登陆'</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        msg = <span class="string">'注销'</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'********************ATM&#123;0&#125;操作**************************'</span>.format(msg))</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'当前时间：&#123;0&#125;'</span>.format(time.strftime(<span class="string">'%Y-%m-%d %H:%M:%S'</span>,time.localtime())))</span><br><span class="line"></span><br><span class="line">user_msg = &#123;&#125;</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    is_exist()</span><br><span class="line">    <span class="keyword">while</span> True:</span><br><span class="line">        menu()</span><br><span class="line">        msg = input(<span class="string">'请输入您需要的操作：'</span>)</span><br><span class="line">        <span class="keyword">if</span> msg == <span class="string">'1'</span>:  <span class="comment">#注册</span></span><br><span class="line">            now(msg)</span><br><span class="line">            name = input(<span class="string">'请输入您的用户名：'</span>)</span><br><span class="line">            password = input(<span class="string">'请输入密码：'</span>)</span><br><span class="line">            register(name,password)</span><br><span class="line">        <span class="keyword">elif</span> msg == <span class="string">'2'</span>:    <span class="comment">#取款</span></span><br><span class="line">            <span class="keyword">if</span> user_msg == &#123;&#125;:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">'请先登陆!'</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> user_msg[<span class="string">'状态'</span>] == <span class="string">'冻结'</span>:    <span class="comment">#若账户为冻结状态，则无法操作</span></span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">'您的账户为冻结状态！'</span>)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    now(msg)</span><br><span class="line">                    money = input(<span class="string">'请输入取款金额：'</span>)</span><br><span class="line">                    msg = input(<span class="string">'请输入密码：'</span>)</span><br><span class="line">                    withdrawal(msg,money,user_msg)</span><br><span class="line">        <span class="keyword">elif</span> msg == <span class="string">'3'</span>:    <span class="comment">#存款</span></span><br><span class="line">            <span class="keyword">if</span> user_msg == &#123;&#125;:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">'请先登陆!'</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> user_msg[<span class="string">'状态'</span>] == <span class="string">'冻结'</span>:    <span class="comment">#若账户为冻结状态，则无法操作</span></span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">'您的账户为冻结状态！'</span>)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    now(msg)</span><br><span class="line">                    msg = input(<span class="string">'请输入密码：'</span>)</span><br><span class="line">                    money = input(<span class="string">'请输入存款金额：'</span>)</span><br><span class="line">                    deposit(msg,money,user_msg)</span><br><span class="line">        <span class="keyword">elif</span> msg == <span class="string">'4'</span>:    <span class="comment">#查询余额</span></span><br><span class="line">            now(msg)</span><br><span class="line">            find()</span><br><span class="line">        <span class="keyword">elif</span> msg == <span class="string">'5'</span>:    <span class="comment">#冻结账户</span></span><br><span class="line">            <span class="keyword">if</span> user_msg == &#123;&#125;:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">'请先登陆!'</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                now(msg)</span><br><span class="line">                <span class="keyword">if</span> user_msg[<span class="string">'状态'</span>] == <span class="string">'冻结'</span>:   <span class="comment">#已经是冻结状态，则进行解冻操作</span></span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">'您的账户为冻结状态！'</span>)</span><br><span class="line">                    msg = input(<span class="string">'是否解冻？（y/n）：'</span>)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    msg = input(<span class="string">'确定要冻结账户吗？（y/n）：'</span>)</span><br><span class="line">                freeze(msg,user_msg)</span><br><span class="line">        <span class="keyword">elif</span> msg == <span class="string">'6'</span>:    <span class="comment">#修改密码操作</span></span><br><span class="line">            <span class="keyword">if</span> user_msg == &#123;&#125;:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">'请先登陆!'</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                now(msg)</span><br><span class="line">                change()</span><br><span class="line">        <span class="keyword">elif</span> msg == <span class="string">'7'</span>:   <span class="comment">#退出系统</span></span><br><span class="line">            quit()</span><br><span class="line">        <span class="keyword">elif</span> msg == <span class="string">'8'</span>:    <span class="comment">#登陆操作</span></span><br><span class="line">            <span class="keyword">if</span> user_msg == &#123;&#125;:</span><br><span class="line">                now(msg)</span><br><span class="line">                name = input(<span class="string">'请输入用户名：'</span>)</span><br><span class="line">                password = input(<span class="string">'请输入密码：'</span>)</span><br><span class="line">                load(name,password):</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">'您已是登陆状态！'</span>)</span><br><span class="line">        <span class="keyword">elif</span> msg == <span class="string">'9'</span>:   <span class="comment">#注销登陆状态</span></span><br><span class="line">            <span class="built_in">logout</span>()</span><br><span class="line">        <span class="keyword">else</span>:   <span class="comment">#输入不存在指令</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'您输入的操作不存在！'</span>)</span><br></pre></td></tr></table></figure></p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/28/简单ATM/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/27/高阶函数练习题/" class="archive-article-date">
-  	<time datetime="2018-07-27T00:34:29.833Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-27</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/07/27/高阶函数练习题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">递归算法及高阶函数练习题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/27/高阶函数练习题/">递归算法及高阶函数练习题</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/26/登录界面函数版/" class="archive-article-date">
-  	<time datetime="2018-07-26T00:31:02.990Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/26/登录界面函数版/">登录、注册、查询界面函数版</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/25/药品进销存2/" class="archive-article-date">
-  	<time datetime="2018-07-25T10:56:49.111Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/25/药品进销存2/">药品进销存2</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/24/Python-7/" class="archive-article-date">
-  	<time datetime="2018-07-24T00:35:32.653Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/24/Python-7/">Python学习笔记7</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/22/药品进销存/" class="archive-article-date">
-  	<time datetime="2018-07-22T14:10:21.799Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/22/药品进销存/">药品进销存系统</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/21/简易博客/" class="archive-article-date">
-  	<time datetime="2018-07-21T00:20:05.849Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/21/简易博客/">简易博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/20/低配版淘宝/" class="archive-article-date">
-  	<time datetime="2018-07-20T00:37:42.869Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/20/低配版淘宝/">低配版淘宝的进阶之路</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/19/Python-6/" class="archive-article-date">
-  	<time datetime="2018-07-19T12:22:36.837Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/19/Python-6/">Python学习笔记6</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/17/Python-5/" class="archive-article-date">
-  	<time datetime="2018-07-17T03:12:59.552Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/17/Python-5/">Python学习笔记5</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2018/page/2/">2</a><a class="extend next" rel="next" href="/archives/2018/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -469,8 +344,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
