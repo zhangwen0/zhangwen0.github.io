@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 张文的Python博客</title>
+  <title>Python学习笔记8 | 张文的Python博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Python">
-<meta property="og:type" content="website">
-<meta property="og:title" content="张文的Python博客">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="DAY8：函数定义、函数调用、函数参数、局部变量与全局变量、函数闭包、高阶函数、递归 续Python学习笔记7 9、函数1、函数的定义函数格式：def 函数名([参数列表]):    执行代码其中，函数名的命名方式与变量名的要求相同（只能是数字、字母、下划线，数字不能开头），函数的参数根据情况，可以有参，也可以无参。同时，参数的个数，可以是1到N个。最后，调用函数时，一定要保证该函数已经被定义，调">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python学习笔记8">
+<meta property="og:url" content="http://yoursite.com/2018/07/30/Python-8/index.html">
 <meta property="og:site_name" content="张文的Python博客">
+<meta property="og:description" content="DAY8：函数定义、函数调用、函数参数、局部变量与全局变量、函数闭包、高阶函数、递归 续Python学习笔记7 9、函数1、函数的定义函数格式：def 函数名([参数列表]):    执行代码其中，函数名的命名方式与变量名的要求相同（只能是数字、字母、下划线，数字不能开头），函数的参数根据情况，可以有参，也可以无参。同时，参数的个数，可以是1到N个。最后，调用函数时，一定要保证该函数已经被定义，调">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-31T12:55:57.368Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="张文的Python博客">
+<meta name="twitter:title" content="Python学习笔记8">
+<meta name="twitter:description" content="DAY8：函数定义、函数调用、函数参数、局部变量与全局变量、函数闭包、高阶函数、递归 续Python学习笔记7 9、函数1、函数的定义函数格式：def 函数名([参数列表]):    执行代码其中，函数名的命名方式与变量名的要求相同（只能是数字、字母、下划线，数字不能开头），函数的参数根据情况，可以有参，也可以无参。同时，参数的个数，可以是1到N个。最后，调用函数时，一定要保证该函数已经被定义，调">
   
     <link rel="alternative" href="/atom.xml" title="张文的Python博客" type="application/atom+xml">
   
@@ -157,268 +161,186 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Python-8" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python学习笔记8
+    </h1>
+  
+
+        
+        <a href="/2018/07/30/Python-8/" class="archive-article-date">
+  	<time datetime="2018-07-30T00:43:44.720Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-30</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>DAY8：函数定义、函数调用、函数参数、局部变量与全局变量、函数闭包、高阶函数、递归</p>
+<p>续Python学习笔记7</p>
+<h3 id="9、函数"><a href="#9、函数" class="headerlink" title="9、函数"></a>9、函数</h3><h4 id="1、函数的定义"><a href="#1、函数的定义" class="headerlink" title="1、函数的定义"></a>1、函数的定义</h4><p>函数格式：<br>def 函数名([参数列表]):<br>    执行代码<br>其中，函数名的命名方式与变量名的要求相同（只能是数字、字母、下划线，数字不能开头），函数的参数根据情况，可以有参，也可以无参。同时，参数的个数，可以是1到N个。最后，调用函数时，一定要保证该函数已经被定义，调用的函数名要与定义的一致。</p>
+<h4 id="2、函数的调用"><a href="#2、函数的调用" class="headerlink" title="2、函数的调用"></a>2、函数的调用</h4><p>函数在外部调用时，直接写函数名以及函数参数即可，不需要将函数体写出来。同时，函数是否有返回值，由其最后一句代码是否为return来决定的。如果有return语句，那么就意味着该函数有返回值，否则意味着返回值为None</p>
+<h4 id="3、函数的参数"><a href="#3、函数的参数" class="headerlink" title="3、函数的参数"></a>3、函数的参数</h4><p>概念：<br>函数在定义时声明的参数，我们称做形参，形式参数的作用，主要是用来表明参数的顺序、类型和个数。并不代表具体内容。<br>在调用时，根据形参的规定，传递进来的实际内容。我们称为实参。<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def display(name,age):  <span class="comment">#定义函数时声明的形参：name，age</span></span><br><span class="line">    <span class="built_in">print</span>(name,age)</span><br><span class="line"></span><br><span class="line">display(<span class="string">'tom'</span>,22)</span><br></pre></td></tr></table></figure></p>
+<p>（1）必须的参数<br>我们在定义函数参数时，显示声明在函数的参数列表中的参数，这些参数一旦被声明，函数在调用时，必须按照所声明的顺序、个数和数据类型，来传递实际的参数内容。<br>（2）关键字参数<br>我们在定义函数时，声明了函数的参数后，在调用函数时我们不仅传递实际的参数内容，同时还将参数名字与之对应，这样保证传递进来的参数如果没有按照函数定义时规定的顺序，也能够正确传递进来。<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def display(name,age):  <span class="comment">#定义函数时声明的形参：name，age</span></span><br><span class="line">    <span class="built_in">print</span>(name,age)</span><br><span class="line"></span><br><span class="line">display(name = <span class="string">'tom'</span>,age = 22)  <span class="comment">#输出tom,22</span></span><br></pre></td></tr></table></figure></p>
+<p>（3）默认参数（缺省参数）<br>在定义函数时，声明函数的参数，同时可以给这些参数进行赋值，在调用该函数时，如果没有给对应参数传递实参，那么Python会默认使用定义函数时所声明的默认参数值。<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def display(name,age = 18):  <span class="comment">#定义函数时声明的形参：name，age</span></span><br><span class="line">    <span class="built_in">print</span>(name,age)</span><br><span class="line"></span><br><span class="line">display(<span class="string">'tom'</span>)  <span class="comment">#输出tom,18</span></span><br></pre></td></tr></table></figure></p>
+<p>（4）不定长参数（可变参数）<br>普通可变参数：在定义函数时，因为参数过长或不确定具体参数列表的个数，可以采用可变长参数来实现。可变参数表示从0到N个参数，采用*参数名<br>注意，此时可变参数类型，为tuple元组类型。<br>关键字可变参数：我们在定义函数时，通过使用**参数名，来表示0到N个参数，在外部调用函数时，将这些可变参数组装成一个字典。<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def person(name, password, **kw):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'用户名&#123;0&#125;，密码&#123;1&#125;，其他内容&#123;2&#125;'</span>.format(name,password,kw))</span><br><span class="line"></span><br><span class="line">person(<span class="string">'tom'</span>,<span class="string">'123456'</span>)  <span class="comment">#输出用户名tom，密码123456，其他内容&#123;&#125;</span></span><br><span class="line">person(<span class="string">'simth'</span>, <span class="string">'12345'</span>,sex=<span class="string">'男'</span>, address=<span class="string">'郑州'</span>)</span><br><span class="line"><span class="comment">#输出用户名simth，密码12345，其他内容&#123;'sex': '男', 'address': '郑州'&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>特殊用法：*<br>在函数定义中，如果单独使用一个<em>号，意味着该</em>后面的参数，为关键字参数声明时必须使用的名字。在调用该函数时，关键字参数的名字要与函数定义中*号后面的参数名称一致。<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def person(name, password, *, city, sex):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'用户名&#123;0&#125;，密码&#123;1&#125;，其他内容&#123;2&#125;&#123;3&#125;'</span>.format(name, password, city, sex)</span><br><span class="line"></span><br><span class="line">person(<span class="string">'simth'</span>, <span class="string">'12345'</span>,sex=<span class="string">'男'</span>, city=<span class="string">'郑州'</span>)</span><br></pre></td></tr></table></figure></p>
+<h4 id="4、局部变量与全局变量"><a href="#4、局部变量与全局变量" class="headerlink" title="4、局部变量与全局变量"></a>4、局部变量与全局变量</h4><p>（1）Python中，函数在调用的时候Python才会给函数一个内存地址用来执行函数内部的相关代码；<br>（2）Python程序在运行时，首先会将程序最外部的变量载入内容，并给其分配相关的内存空间，我们称这种变量为全局变量；<br>（3）函数中声明的变量，只有在函数被执行时，才会被分配内存空间进行执行，我们称这种变量为局部变量；<br>（4）Python程序在执行过程中，执行函数时首先检查其函数内部的局部变量是否存在，如果存在就调用它，如果不存在就从外部全局变量中进行调用，如果仍然没有发现相关内容，则报错。<br>（5）globals()与locals()<br>在Python中，通过globals()观察全局作用域中内容，包括：内置函数、自定义函数、全局变量；通过locals()观察局部作用域中的内容，包括：局部变量，嵌套函数（内部函数）inner<br>（6）当函数中出现嵌套情况时，最内层函数执行调用变量，会采用“就近原则”即先查找自身范围内的变量，如果没有找到，则向上查找，直到程序最外部结束。<br>（7）global与nonlocal<br>global用来修饰局部变量时，表示该变量将作为全局变量来使用。即不仅在函数中可以被调用，同时在文件最外部也可以被调用。<br>nonlocal用来修饰嵌套函数内部的变量，如nonlocal b，则内部嵌套的b的作用域扩大到上一次对其定义的范围。特别要注意的是，其上层定义不能是全局变量。<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">b = 10</span><br><span class="line">def add_b():</span><br><span class="line">    b = 20   <span class="comment">#当b = 20,b = 30,b = 40都被注释，程序报错，因为b = 10是全局变量，nonlocal不能作用于全局变量</span></span><br><span class="line">    def do_global():</span><br><span class="line">        b = 30   <span class="comment">#当b = 30和b = 40都被注释，输出50 50 50 50，仅注释本行，则输出50 50 20 20</span></span><br><span class="line">        def dd_nonlocal():</span><br><span class="line">            b = 40     <span class="comment">#当本行被注释时输出50 50 50 20 </span></span><br><span class="line">            def d1():</span><br><span class="line">                nonlocal b</span><br><span class="line">                b = 50</span><br><span class="line">                <span class="built_in">print</span>(b,end = <span class="string">' '</span>)</span><br><span class="line">            d1()</span><br><span class="line">            <span class="built_in">print</span>(b,end = <span class="string">' '</span>)</span><br><span class="line">        dd_nonlocal()</span><br><span class="line">        <span class="built_in">print</span>(b,end = <span class="string">' '</span>)</span><br><span class="line">    do_global()</span><br><span class="line">    <span class="built_in">print</span>(b,end = <span class="string">' '</span>)</span><br><span class="line"></span><br><span class="line">add_b()    <span class="comment">#输出50 50 30 20</span></span><br></pre></td></tr></table></figure></p>
+<p>注意：<br>使用global关键字修饰的变量之前可以并不存在<br>而使用nonlocal关键字修饰的变量在嵌套作用域中必须已经存在。</p>
+<h5 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h5><p>在函数中定义的变量，我们成为局部变量。包括在函数内部定义的变量、作为参数传递进来的变量。局部变量起作用的范围，我们称为局部作用域。因为Python在调用局部变量时，需要给它分配内存地址，我们称为这个地址为局部命名空间。<br>在文件最外层定义的变量，我们成为全局变量，可以在文件中的任意位置进行调用。全局变量起作用的范围，我们称为全局作用域。Python在载入文件时，就需要给全局变量分配内存地址，这个地址我们称为全局命名空间。</p>
+<h5 id="ython运行时处理变量的步骤："><a href="#ython运行时处理变量的步骤：" class="headerlink" title="ython运行时处理变量的步骤："></a>ython运行时处理变量的步骤：</h5><p>1、从Python解释器开始执行之后，就在内存中开辟里一个空间，每当遇到一个变量的时候，就把变量名和值之间对应的关系记录下来，但是当遇到函数定义的时候，解释器只是象征性的将函数名读入内存，表示知道这个函数存在了，至于函数内部的变量和逻辑，解释器根本不关心。<br>2、函数执行时，函数中的变量会储存在新开辟出来的内存中，函数中的变量只能在函数内部使用，并且会随着函数执行完毕，这块内存中的所有内容也会被清空</p>
+<h4 id="5、函数闭包"><a href="#5、函数闭包" class="headerlink" title="5、函数闭包"></a>5、函数闭包</h4><h5 id="（1）闭包格式："><a href="#（1）闭包格式：" class="headerlink" title="（1）闭包格式："></a>（1）闭包格式：</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def outer():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'我是外部函数！'</span>)</span><br><span class="line">    def inner():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'我是内部函数！'</span>)</span><br><span class="line">    <span class="built_in">return</span> inner</span><br><span class="line"></span><br><span class="line">f = outer()</span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
+<p>通过对例子的观察，我们发现闭包函数的写法有如下特点：<br>1、闭包函数作为内部函数，嵌套在外部函数中<br>2、闭包函数会作为外部函数的返回值，进行返回。返回闭包函数时，只返回函数名，不带括号。<br>3、外部调用时，首先要执行外部函数，然后将结果赋值给一个变量，此时该变量对应了闭包函数。<br>4、我们可以通过<strong>closure</strong>内部函数可以观察到，闭包函数的存在。前提是，闭包函数要与外部函数进行数据传递或调用。<br>总结：闭包使用的数据，必须是本身定义或外部函数中定义的相关变量，通常需要调用外部函数的数据，形成一个封闭的函数结构。不能与外部数据（全局变量）发生交流。</p>
+<h5 id="（2）闭包的应用—装饰器"><a href="#（2）闭包的应用—装饰器" class="headerlink" title="（2）闭包的应用—装饰器"></a>（2）闭包的应用—装饰器</h5><p>1、概念：装饰器本身仍然是一个函数。是我们队闭包应用的一种具体实现。<br>2、作用：装饰器可以在不改变函数本身功能的情况下，为函数添加额外的功能。诸如：日志、测试、性能检测等。装饰器同样也是返回一个函数对象。<br>3、用法：<br>使用格式：@+装饰器名称<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line"></span><br><span class="line">def outer(f):</span><br><span class="line">    def inner(*var):</span><br><span class="line">        start_time = time.time()</span><br><span class="line">        f(*var)</span><br><span class="line">        time.sleep(0.3)</span><br><span class="line">        end_time = time.time()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'此函数执行时间为&#123;0&#125;'</span>.format(str(end_time-start_time)))</span><br><span class="line">    <span class="built_in">return</span> inner</span><br><span class="line"></span><br><span class="line">@outer      <span class="comment"># 此处就是装饰器的声明，这种方法称为语法糖</span></span><br><span class="line">def func1():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'hello world'</span>)</span><br></pre></td></tr></table></figure></p>
+<h4 id="6、高阶函数"><a href="#6、高阶函数" class="headerlink" title="6、高阶函数"></a>6、高阶函数</h4><h5 id="（1）匿名函数"><a href="#（1）匿名函数" class="headerlink" title="（1）匿名函数"></a>（1）匿名函数</h5><p>使用lambda关键字进行修饰，没有显式声明函数的名字。格式如下：<br>lambda 参数：表达式（返回值）<br>注意，在使用匿名函数时，因为其自身的情况限制，匿名函数并不能执行比较复杂的业务逻辑，即函数内的代码不能过多。lambda本身是一个表达式<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = lambda x,y,z:x <span class="keyword">if</span> x&gt;y and x&gt;z <span class="keyword">else</span> y <span class="keyword">if</span> y&gt;z <span class="keyword">else</span> z</span><br><span class="line">a(3,1,8)    <span class="comment">#输出8</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="（2）map函数（映射函数）"><a href="#（2）map函数（映射函数）" class="headerlink" title="（2）map函数（映射函数）"></a>（2）map函数（映射函数）</h5><p>函数格式：map(func,iterable)<br>返回值：map 对象（迭代器）<br>说明：map函数主要作用是，将指定函数与序列中的元素进行映射，并完成函数中功能的批量操作，返回值为一个迭代器。我们可以使用for循环或next()函数进行遍历。通常情况下，如果映射的函数较为简单，我们就不单独声明函数，而是采用匿名函数来实现，这样也能提高运行效率。<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def f(x):</span><br><span class="line">    <span class="built_in">return</span> x*x</span><br><span class="line">a = map(f,[1,2,3])</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> a:</span><br><span class="line">    <span class="built_in">print</span>(i,end = <span class="string">' '</span>)  <span class="comment">#输出1 4 9</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="（3）reduce函数（归纳函数）"><a href="#（3）reduce函数（归纳函数）" class="headerlink" title="（3）reduce函数（归纳函数）"></a>（3）reduce函数（归纳函数）</h5><p>函数格式：reduce(func,iterator)<br>返回值：返回函数计算结果，具体类型根据函数的返回值来定<br>说明：reduce函数中的func，一定要设为两个参数，用来接收迭代器返回的值。操作顺序为首先接收第一、第二个值，进行运算；运算结果再与第三个值进行运行，以此类推，直到迭代器迭代完全部数据。<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from functools import reduce</span><br><span class="line">m = reduce(lambda x,y:x*y,[1,2,3])</span><br><span class="line"><span class="built_in">print</span>(m)   <span class="comment">#输出6</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="（4）filter函数（过滤函数）"><a href="#（4）filter函数（过滤函数）" class="headerlink" title="（4）filter函数（过滤函数）"></a>（4）filter函数（过滤函数）</h5><p>函数格式：filter(func,iterable)<br>返回值：返回一个迭代器<br>说明：过滤函数与映射函数类似，都需要将函数作用于序列中的每个元素，根据函数判断True或False，返回相关元素。<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">l = filter(lambda x:x % 2 != 0,range(1,10))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> l:</span><br><span class="line">    <span class="built_in">print</span>(i,end = <span class="string">' '</span>)   <span class="comment">#1 3 5 7 9</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="7、递归"><a href="#7、递归" class="headerlink" title="7、递归"></a>7、递归</h4><p>递归概念：就是使用自身函数对自身进行调用，每调用一次将当前次的运行结果保存到函数的堆栈中，以副本形式保存，一直到最后完成全部调用。然后逐一向外将当期函数的结果返回并退出到其调用的位置。<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def mysum(q):</span><br><span class="line">    <span class="keyword">if</span> not q:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'1'</span>)</span><br><span class="line">        <span class="built_in">return</span>(0)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(q[0],q[1:],<span class="string">'1'</span>)    </span><br><span class="line">        <span class="built_in">return</span> q[0]+mysum(q[1:])</span><br><span class="line">b = mysum([1,2,3,4,5])</span><br><span class="line"><span class="built_in">print</span>(b)   <span class="comment">#输出15</span></span><br></pre></td></tr></table></figure></p>
+<p>在Python中，通常推荐使用迭代，递归本身对内存的消耗和运行效率低下的问题较少使用。</p>
+<p> –未完待续–</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/19/Python-6/" class="archive-article-date">
-  	<time datetime="2018-07-19T12:22:36.837Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/19/Python-6/">Python学习笔记6</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/30/Python-8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/17/Python-5/" class="archive-article-date">
-  	<time datetime="2018-07-17T03:12:59.552Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-17</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2018/07/31/Python-9/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Python学习笔记9
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/07/28/简单ATM/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">简单ATM系统</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/17/Python-5/">Python学习笔记5</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/16/for嵌套-三角形/" class="archive-article-date">
-  	<time datetime="2018-07-16T12:48:00.851Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/16/for嵌套-三角形/">使用for循环的嵌套，输出不同的三角形</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/16/Python-4/" class="archive-article-date">
-  	<time datetime="2018-07-16T10:40:56.203Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/16/Python-4/">Python学习笔记4</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/16/Python-3/" class="archive-article-date">
-  	<time datetime="2018-07-16T00:46:11.703Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/16/Python-3/">Python学习笔记3</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/13/Python-2/" class="archive-article-date">
-  	<time datetime="2018-07-13T01:12:18.252Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/13/Python-2/">Python学习笔记2</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/13/Python-1/" class="archive-article-date">
-  	<time datetime="2018-07-13T01:12:18.252Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/13/Python-1/">Python学习笔记1</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/12/游戏输出/" class="archive-article-date">
-  	<time datetime="2018-07-12T15:06:27.368Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/12/游戏输出/">游戏人物打BOSS1.0版</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/10/hello-world/" class="archive-article-date">
-  	<time datetime="2018-07-10T13:05:51.540Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/10/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -442,8 +364,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
