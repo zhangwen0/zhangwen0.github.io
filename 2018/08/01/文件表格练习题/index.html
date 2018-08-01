@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | 张文的Python博客</title>
+  <title>Python对Excel文件的操作（练习题） | 张文的Python博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Python">
-<meta property="og:type" content="website">
-<meta property="og:title" content="张文的Python博客">
-<meta property="og:url" content="http://yoursite.com/archives/2018/page/2/index.html">
+  <meta name="description" content="Python对Excel文件的操作1、需要三个主要的模块xlrd:用来读取Excel文件中的内容xlwt：用来生成Excel文件xlutils：用来实现Excel文件的复制 xlrdopen_workbook()函数格式：open_workbook(文件名)返回值：返回Excel对象说明：打开指定的Excel文件，生成一个Excel对象用来实现读取行、列及单元格内容 函数格式：sheet_by_n">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python对Excel文件的操作（练习题）">
+<meta property="og:url" content="http://yoursite.com/2018/08/01/文件表格练习题/index.html">
 <meta property="og:site_name" content="张文的Python博客">
+<meta property="og:description" content="Python对Excel文件的操作1、需要三个主要的模块xlrd:用来读取Excel文件中的内容xlwt：用来生成Excel文件xlutils：用来实现Excel文件的复制 xlrdopen_workbook()函数格式：open_workbook(文件名)返回值：返回Excel对象说明：打开指定的Excel文件，生成一个Excel对象用来实现读取行、列及单元格内容 函数格式：sheet_by_n">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-01T11:42:43.448Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="张文的Python博客">
+<meta name="twitter:title" content="Python对Excel文件的操作（练习题）">
+<meta name="twitter:description" content="Python对Excel文件的操作1、需要三个主要的模块xlrd:用来读取Excel文件中的内容xlwt：用来生成Excel文件xlutils：用来实现Excel文件的复制 xlrdopen_workbook()函数格式：open_workbook(文件名)返回值：返回Excel对象说明：打开指定的Excel文件，生成一个Excel对象用来实现读取行、列及单元格内容 函数格式：sheet_by_n">
   
     <link rel="alternative" href="/atom.xml" title="张文的Python博客" type="application/atom+xml">
   
@@ -157,295 +161,165 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-文件表格练习题" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python对Excel文件的操作（练习题）
+    </h1>
+  
+
+        
+        <a href="/2018/08/01/文件表格练习题/" class="archive-article-date">
+  	<time datetime="2018-08-01T11:15:05.055Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-01</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Python对Excel文件的操作"><a href="#Python对Excel文件的操作" class="headerlink" title="Python对Excel文件的操作"></a>Python对Excel文件的操作</h3><p>1、需要三个主要的模块<br>xlrd:用来读取Excel文件中的内容<br>xlwt：用来生成Excel文件<br>xlutils：用来实现Excel文件的复制</p>
+<h4 id="xlrd"><a href="#xlrd" class="headerlink" title="xlrd"></a>xlrd</h4><p>open_workbook()<br>函数格式：open_workbook(文件名)<br>返回值：返回Excel对象<br>说明：打开指定的Excel文件，生成一个Excel对象用来实现读取行、列及单元格内容</p>
+<p>函数格式：sheet_by_name(sheet页面名)/sheet_by_index(sheet页索引位，默认从0开始)<br>返回值：sheet页对象<br>说明：找到指定的sheet页，生成一个对应的sheet页对象，对其内部的数据进行检索</p>
+<p>函数格式：sheet.cell(rownum,colnum)<br>返回值：返回指定行列的单元格对象，如果要获取其中的内容，调用value属性。<br>说明：通过指定行、列，能够确认一个单元格。</p>
+<h4 id="xlwt"><a href="#xlwt" class="headerlink" title="xlwt"></a>xlwt</h4><p>函数名称：Workbook()<br>返回值：返回一个新创建的Excel空对象<br>说明：该函数用来生成一个Excel对象，但是该对象没有任何内容</p>
+<p>函数名称：add_sheet(sheet名字)<br>返回值：返回一个新创建的sheet页对象<br>说明：该函数用来新增一个空的sheet页对象</p>
+<p>函数名称：write(row, col, value)<br>返回值：无<br>说明：对指定的行列单元格内，写入value内容。</p>
+<h4 id="xlutils"><a href="#xlutils" class="headerlink" title="xlutils"></a>xlutils</h4><p>函数格式：copy(Excel对象)<br>返回值：返回一个指定对象的副本<br>说明：在Python中对Excel的修改，都是生成一个对应的副本，修改后保存。</p>
+<p>函数格式：get_sheet(索引位)<br>返回值：返回一个指定对象副本中的sheet页<br>说明：我们实际修改的数据，都是位于sheet页中。因此要获取到指定的sheet页。</p>
+<h3 id="1-0将列表中的数据写入Excel"><a href="#1-0将列表中的数据写入Excel" class="headerlink" title="1.0将列表中的数据写入Excel"></a>1.0将列表中的数据写入Excel</h3><p>将以下人员信息表写入Excel中<br>姓名    年龄    性别    出生年月    家庭住址    婚姻状况<br>Tom     18      男     20000229   河南郑州      未婚<br>小红    22      女     19960813   云南大理      未婚<br>小明    28      男     19900324   海南三亚      已婚<br>要求：1、Excel表格名称为“人员信息表”<br>     2、以函数形式实现<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">import xlwt</span><br><span class="line">import xlrd</span><br><span class="line">from xlutils.copy import copy</span><br><span class="line">def saveExcel(title,data):    <span class="comment">#写函数</span></span><br><span class="line">    wbt = xlwt.Workbook()</span><br><span class="line">    <span class="comment">#生成一个sheet页</span></span><br><span class="line">    sheet = wbt.add_sheet(<span class="string">'人员信息表'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(title)):    <span class="comment">#输入表头</span></span><br><span class="line">        sheet.write(0,i,title[i])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> m <span class="keyword">in</span> range(len(data)):    <span class="comment">#输入表格内容</span></span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> range(len(data[m])):</span><br><span class="line">            sheet.write(m+1,n,data[m][n])</span><br><span class="line"></span><br><span class="line">    wbt.save(<span class="string">'person.xls'</span>)</span><br><span class="line"> </span><br><span class="line">def readExcel(bookname,sheetname):     <span class="comment">#读函数</span></span><br><span class="line">    wb = xlrd.open_workbook(bookname)</span><br><span class="line">    sheet = wb.sheet_by_name(sheetname)</span><br><span class="line">    <span class="keyword">for</span> r <span class="keyword">in</span> range(sheet.nrows):</span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> range(sheet.ncols):</span><br><span class="line">            <span class="built_in">print</span>(sheet.cell(r,c).value,end = <span class="string">' '</span>)</span><br><span class="line">        <span class="built_in">print</span>()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    title = [<span class="string">'姓名'</span>,<span class="string">'年龄'</span>,<span class="string">'性别'</span>,<span class="string">'出生年月'</span>,<span class="string">'家庭住址'</span>,<span class="string">'婚姻状况'</span>]  <span class="comment">#作为Excel的标题</span></span><br><span class="line"><span class="comment">#生成Excel中的数据</span></span><br><span class="line">    data = [</span><br><span class="line">        [<span class="string">'Tom'</span>,18,<span class="string">'男'</span>,<span class="string">'20000229'</span>,<span class="string">'河南'</span>,<span class="string">'未婚'</span>],</span><br><span class="line">        [<span class="string">'小红'</span>,22,<span class="string">'女'</span>,<span class="string">'19960813'</span>,<span class="string">'河南'</span>,<span class="string">'未婚'</span>],</span><br><span class="line">        [<span class="string">'小明'</span>,28,<span class="string">'男'</span>,<span class="string">'19900324'</span>,<span class="string">'河南'</span>,<span class="string">'已婚'</span>]</span><br><span class="line">    ]</span><br><span class="line">    saveExcel(title,data)</span><br><span class="line">    readExcel(<span class="string">'person.xls'</span>,<span class="string">'人员信息表'</span>)</span><br></pre></td></tr></table></figure></p>
+<h3 id="2、将文件中的内容写入表格"><a href="#2、将文件中的内容写入表格" class="headerlink" title="2、将文件中的内容写入表格"></a>2、将文件中的内容写入表格</h3><p>分别将十个文件中的评论信息读出，并写入Excel表格中，表格的表头为：<br>文件1评论 文件2评论 文件3评论 文件4评论 ······ 文件10评论<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">import xlwt</span><br><span class="line"></span><br><span class="line">def is_exist(way):   <span class="comment">#判断该文件是否存在</span></span><br><span class="line">    <span class="keyword">if</span> os.path.exists(way):</span><br><span class="line">        flag = True</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        flag = False</span><br><span class="line">    <span class="built_in">return</span> flag</span><br><span class="line"></span><br><span class="line">def read_file(filename):   </span><br><span class="line">    temp_list = []</span><br><span class="line">    file = open(filename,<span class="string">'r'</span>,encoding = <span class="string">'UTF-8'</span>)</span><br><span class="line">    <span class="keyword">while</span> True:</span><br><span class="line">        msg = file.readline()  <span class="comment">#逐行读取信息</span></span><br><span class="line">        <span class="keyword">if</span> msg == <span class="string">''</span>:</span><br><span class="line">            <span class="built_in">break</span></span><br><span class="line">        temp_list.append(msg) </span><br><span class="line">    file.close()</span><br><span class="line">    <span class="built_in">return</span> temp_list</span><br><span class="line"></span><br><span class="line">def saveExcel(title,data):    <span class="comment">#写函数</span></span><br><span class="line">    wbt = xlwt.Workbook()</span><br><span class="line">    <span class="comment">#生成一个sheet页</span></span><br><span class="line">    sheet = wbt.add_sheet(<span class="string">'macbook'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(title)):    <span class="comment">#输入表头</span></span><br><span class="line">        sheet.write(0,i,title[i])</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> range(len(data[i])):</span><br><span class="line">            sheet.write(n+1,i,data[i][n])</span><br><span class="line"></span><br><span class="line">    wbt.save(<span class="string">'comment.xls'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    lis_all = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(1,11):</span><br><span class="line">        filename = <span class="string">'C:\Python\PYTHONCODE\jd\AvailableData'</span>+str(i)+<span class="string">'.txt'</span></span><br><span class="line">        <span class="keyword">if</span> is_exist(filename):</span><br><span class="line">            lis_all.append(read_file(filename))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'C:\Python\PYTHONCODE\jd\AvailableData&#123;0&#125;.txt文件不存在！'</span>.format(i))</span><br><span class="line">    title = [<span class="string">'文件'</span>+str(i)+<span class="string">'评论'</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(1,11)]</span><br><span class="line">    saveExcel(title,lis_all)</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/20/低配版淘宝/" class="archive-article-date">
-  	<time datetime="2018-07-20T00:37:42.869Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/20/低配版淘宝/">低配版淘宝的进阶之路</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/01/文件表格练习题/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/19/Python-6/" class="archive-article-date">
-  	<time datetime="2018-07-19T12:22:36.837Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/07/31/Python-9/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python学习笔记9</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/19/Python-6/">Python学习笔记6</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/17/Python-5/" class="archive-article-date">
-  	<time datetime="2018-07-17T03:12:59.552Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/17/Python-5/">Python学习笔记5</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/16/for嵌套-三角形/" class="archive-article-date">
-  	<time datetime="2018-07-16T12:48:00.851Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/16/for嵌套-三角形/">使用for循环的嵌套，输出不同的三角形</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/16/Python-4/" class="archive-article-date">
-  	<time datetime="2018-07-16T10:40:56.203Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/16/Python-4/">Python学习笔记4</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/16/Python-3/" class="archive-article-date">
-  	<time datetime="2018-07-16T00:46:11.703Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/16/Python-3/">Python学习笔记3</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/13/Python-2/" class="archive-article-date">
-  	<time datetime="2018-07-13T01:12:18.252Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/13/Python-2/">Python学习笔记2</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/13/Python-1/" class="archive-article-date">
-  	<time datetime="2018-07-13T01:12:18.252Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/13/Python-1/">Python学习笔记1</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/12/游戏输出/" class="archive-article-date">
-  	<time datetime="2018-07-12T15:06:27.368Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/12/游戏输出/">游戏人物打BOSS1.0版</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/10/hello-world/" class="archive-article-date">
-  	<time datetime="2018-07-10T13:05:51.540Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/10/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2018/">&laquo; Prev</a><a class="page-number" href="/archives/2018/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -469,8 +343,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
