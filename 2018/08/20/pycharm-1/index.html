@@ -6,17 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>张文的Python博客</title>
+  <title>爬虫学习笔记1 | 张文的Python博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Python">
+  <meta name="description" content="DAY1：网络原理、HTTP与HTTPS的区别、网络七层模型、HTTP的请求机制、请求方法中get与post的区别、HTML的网页结构 一、网络原理1、HTTP与HTTPS的区别HTTP：我们称为超文本传输协议，主要用来实现从网络传输超文本到本地浏览器，实现高效且准确的超文本传送。目前HTTP的版本为1.1HTTPS：我们认为就是以安全为目标的HTTP通道，即在HTTP协议的基础上加入了SSL层，">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="张文的Python博客">
+<meta property="og:title" content="爬虫学习笔记1">
 <meta property="og:url" content="http://yoursite.com/2018/08/20/pycharm-1/index.html">
 <meta property="og:site_name" content="张文的Python博客">
+<meta property="og:description" content="DAY1：网络原理、HTTP与HTTPS的区别、网络七层模型、HTTP的请求机制、请求方法中get与post的区别、HTML的网页结构 一、网络原理1、HTTP与HTTPS的区别HTTP：我们称为超文本传输协议，主要用来实现从网络传输超文本到本地浏览器，实现高效且准确的超文本传送。目前HTTP的版本为1.1HTTPS：我们认为就是以安全为目标的HTTP通道，即在HTTP协议的基础上加入了SSL层，">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-20T00:45:56.171Z">
+<meta property="og:updated_time" content="2018-08-24T08:52:26.873Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="张文的Python博客">
+<meta name="twitter:title" content="爬虫学习笔记1">
+<meta name="twitter:description" content="DAY1：网络原理、HTTP与HTTPS的区别、网络七层模型、HTTP的请求机制、请求方法中get与post的区别、HTML的网页结构 一、网络原理1、HTTP与HTTPS的区别HTTP：我们称为超文本传输协议，主要用来实现从网络传输超文本到本地浏览器，实现高效且准确的超文本传送。目前HTTP的版本为1.1HTTPS：我们认为就是以安全为目标的HTTP通道，即在HTTP协议的基础上加入了SSL层，">
   
     <link rel="alternative" href="/atom.xml" title="张文的Python博客" type="application/atom+xml">
   
@@ -161,9 +164,44 @@
             <article id="post-pycharm-1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      爬虫学习笔记1
+    </h1>
+  
+
+        
+        <a href="/2018/08/20/pycharm-1/" class="archive-article-date">
+  	<time datetime="2018-08-20T00:45:56.170Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-20</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>DAY1：网络原理、HTTP与HTTPS的区别、网络七层模型、HTTP的请求机制、请求方法中get与post的区别、HTML的网页结构</p>
+<h2 id="一、网络原理"><a href="#一、网络原理" class="headerlink" title="一、网络原理"></a>一、网络原理</h2><h3 id="1、HTTP与HTTPS的区别"><a href="#1、HTTP与HTTPS的区别" class="headerlink" title="1、HTTP与HTTPS的区别"></a>1、HTTP与HTTPS的区别</h3><p>HTTP：我们称为超文本传输协议，主要用来实现从网络传输超文本到本地浏览器，实现高效且准确的超文本传送。目前HTTP的版本为1.1<br>HTTPS：我们认为就是以安全为目标的HTTP通道，即在HTTP协议的基础上加入了SSL层，简称HTTPS。<br>SSL的主要作用分为以下两部分：<br>第一、为HTTP传输文件提供安全的传输通道<br>第二、确认网站的真实性，通过HTTPS访问的网站都需要获取到CA认证。</p>
+<h3 id="2、网络七层模型"><a href="#2、网络七层模型" class="headerlink" title="2、网络七层模型"></a>2、网络七层模型</h3><p>应用层<br>与其它计算机进行通讯的一个应用，它是对应应用程序的通信服务的。例如，一个没有通信功能的字处理程序就不能执行通信的代码，从事字处理工作的程序员也不关心OSI的第7层。但是，如果添加了一个传输文件的选项，那么字处理器的程序员就需要实现OSI的第7层。例如：TELNET，HTTP，FTP，NFS，SMTP等。<br>表示层<br>这一层的主要功能是定义数据格式及加密。例如，FTP允许你选择以二进制或ASCII格式传输。如果选择二进制，那么发送方和接收方不改变文件的内容。如果选择ASCII格式，发送方将把文本从发送方的字符集转换成标准的ASCII后发送数据。在接收方将标准的ASCII转换成接收方计算机的字符集。例如：加密，ASCII等。<br>会话层<br>它定义了如何开始、控制和结束一个会话，包括对多个双向消息的控制和管理，以便在只完成连续消息的一部分时可以通知应用，从而使表示层看到的数据是连续的，在某些情况下，如果表示层收到了所有的数据，则用数据代表表示层。例如：RPC，SQL等。<br>传输层<br>这层的功能包括是否选择差错恢复协议还是无差错恢复协议，及在同一主机上对不同应用的数据流的输入进行复用，还包括对收到的顺序不对的数据包的重新排序功能。例如：TCP，UDP，SPX。<br>网络层<br>这层对端到端的包传输进行定义，它定义了能够标识所有结点的逻辑地址，还定义了路由实现的方式和学习的方式。为了适应最大传输单元长度小于包长度的传输介质，网络层还定义了如何将一个包分解成更小的包的分段方法。例如：IP，IPX等。<br>数据链路层<br>它定义了在单个链路上如何传输数据。这些协议与被讨论的各种介质有关。例如：ATM，FDDI等。<br>物理层<br>OSI的物理层规范是有关传输介质的特这些规范通常也参考了其他组织制定的标准。连接头、帧、帧的使用、电流、编码及光调制等都属于各种物理层规范中的内容。物理层常用多个规范完成对所有细节的定义。例如：Rj45，802.3等。</p>
+<h3 id="3、HTTP的请求机制"><a href="#3、HTTP的请求机制" class="headerlink" title="3、HTTP的请求机制"></a>3、HTTP的请求机制</h3><a id="more"></a>
+<p>第一，由客户端（浏览器）发出请求<br>第二，通过网络传输，到指定的服务器地址<br>第三，服务器接收相关请求，并进行解析<br>第四，服务器将最终的结果响应回客户端<br>第五，客户端接收到服务器响应后，通过浏览器解析，最终将内容进行展现</p>
+<h3 id="4、客户端访问服务器，发出请求，有四部分构成"><a href="#4、客户端访问服务器，发出请求，有四部分构成" class="headerlink" title="4、客户端访问服务器，发出请求，有四部分构成"></a>4、客户端访问服务器，发出请求，有四部分构成</h3><p>第一，请求方法（request method），默认为get方式。只有在表单提交和文件上传时为post方法。<br>第二，请求网址（request url），即在浏览器中输入的网路地址。<br>第三，请求头（request header），用来标识为一个浏览器正常的访问<br>第四，请求体（request body），用来传输到服务器端的相关数据</p>
+<h3 id="5、请求方法中get与post的区别"><a href="#5、请求方法中get与post的区别" class="headerlink" title="5、请求方法中get与post的区别"></a>5、请求方法中get与post的区别</h3><p>第一、使用get方式提交请求时，相关数据会作为url的参数被一起进行提交，我们可以直接在地址栏中观察到相关数据。而采用post方式请求的url不会包含这些数据，而是直接通过表单提交到服务器。<br>第二、get方式提交请求，提交的数据大小不能大于1024字节，而post方式提交数据，没有大小的限制。<br>总之，如果提交的信息比较敏感或者字节较大时使用post方式；如果只是普通的请求使用get方式。<br><!--more--></p>
+<h2 id="二、HTML网页结构"><a href="#二、HTML网页结构" class="headerlink" title="二、HTML网页结构"></a>二、HTML网页结构</h2><h3 id="1、HTML基本构成"><a href="#1、HTML基本构成" class="headerlink" title="1、HTML基本构成"></a>1、HTML基本构成</h3><p>HTML有三个标签来构成基本结构：<br>&lt;\html&gt;:作为HTML文件的根标签，所有的页面中的标签和内容都要在HTML标签的范围内。<br>&lt;\head&gt;：作为HTML文件的头部标签，相关页面的信息、编码、引导外部的CSS文件和JS文件，都需要放置在head标签中。<br>&lt;\body&gt;：body标签中的内容，就是我们爬虫需要解析的主体。所有需要在页面上展现的内容，都会放置在该标签中。</p>
+<h3 id="2、常见的HTML标签"><a href="#2、常见的HTML标签" class="headerlink" title="2、常见的HTML标签"></a>2、常见的HTML标签</h3><p>1）h1…h6：标题标签，用来显示标题，h1最大，h6最小。<br>2）</p><p>：段落标签。用来对文本内容进行分段。<br>3）<a>：链接标签。用来跳转到指定的网址。<br><a target="" href="URL">链接地址</a><br>其中参数target，_self:在自身的窗口重新打开指定的网址<br>_blank：在一个新窗口中打开指定的网址<br>4）<img>：图片标签。用来载入指定位置的图片，通常可以接收的图片类型：JPG、png、gif、bmp<br><img src="" alt=""><br>其中：src：指定图片的具体位置<br>      alt：其中的内容，作为图片无法载入时，显示的内容。<br>5）表格标签：table、tr、th、td</a></p>
+<p><table>：表格标签，所有表格中的行和单元格内容都必须放置在内部。</table></p>
+<p><tr>:表格行，代表表格一行</tr></p>
+<p><th>:表格头，代表表格的标题行</th></p>
+<p><td>：表格单元格，代表表格中的每个单元内容<br>6）列表<br>有序列表：</td></p>
+<p><ol><br>   <li></li><br></ol><br>无序列表:</p>
+<p><ul><br>   <li></li><br></ul><br>自定义列表：</p>
+<p><dl><br>   <dt><br>      <dd></dd><br>   </dt><br></dl><br>7)div与span<br>div：块级元素，用来实现页面布局。自身没有任何效果<br>span:内联元素，用做文本容器。<br>8）表单</p>
+<p><form name="表单名" action="URL" method="get/post"><br>默认情况，如果没有声明method属性，缺省值为get</form></p>
+<p><input type=""><br>输入标签，type属性：<br>text:文本框<br>password：密码框<br>checkbox：复选框<br>radio：单选框<br>submit：提交按钮<br>reset：重置按钮<br>button：按钮<br>file:文件上传</p>
+<p><textarea cols="列数" rows="行数">：文件区标签</textarea></p>
+<p> –未完待续–</p>
+
       
 
       

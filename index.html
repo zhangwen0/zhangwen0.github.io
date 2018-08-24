@@ -162,8 +162,29 @@
     <article id="post-pycharm-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/20/pycharm-1/">爬虫学习笔记1</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/20/pycharm-1/" class="archive-article-date">
+  	<time datetime="2018-08-20T00:45:56.170Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-20</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
+        <p>DAY1：网络原理、HTTP与HTTPS的区别、网络七层模型、HTTP的请求机制、请求方法中get与post的区别、HTML的网页结构</p>
+<h2 id="一、网络原理"><a href="#一、网络原理" class="headerlink" title="一、网络原理"></a>一、网络原理</h2><h3 id="1、HTTP与HTTPS的区别"><a href="#1、HTTP与HTTPS的区别" class="headerlink" title="1、HTTP与HTTPS的区别"></a>1、HTTP与HTTPS的区别</h3><p>HTTP：我们称为超文本传输协议，主要用来实现从网络传输超文本到本地浏览器，实现高效且准确的超文本传送。目前HTTP的版本为1.1<br>HTTPS：我们认为就是以安全为目标的HTTP通道，即在HTTP协议的基础上加入了SSL层，简称HTTPS。<br>SSL的主要作用分为以下两部分：<br>第一、为HTTP传输文件提供安全的传输通道<br>第二、确认网站的真实性，通过HTTPS访问的网站都需要获取到CA认证。</p>
+<h3 id="2、网络七层模型"><a href="#2、网络七层模型" class="headerlink" title="2、网络七层模型"></a>2、网络七层模型</h3><p>应用层<br>与其它计算机进行通讯的一个应用，它是对应应用程序的通信服务的。例如，一个没有通信功能的字处理程序就不能执行通信的代码，从事字处理工作的程序员也不关心OSI的第7层。但是，如果添加了一个传输文件的选项，那么字处理器的程序员就需要实现OSI的第7层。例如：TELNET，HTTP，FTP，NFS，SMTP等。<br>表示层<br>这一层的主要功能是定义数据格式及加密。例如，FTP允许你选择以二进制或ASCII格式传输。如果选择二进制，那么发送方和接收方不改变文件的内容。如果选择ASCII格式，发送方将把文本从发送方的字符集转换成标准的ASCII后发送数据。在接收方将标准的ASCII转换成接收方计算机的字符集。例如：加密，ASCII等。<br>会话层<br>它定义了如何开始、控制和结束一个会话，包括对多个双向消息的控制和管理，以便在只完成连续消息的一部分时可以通知应用，从而使表示层看到的数据是连续的，在某些情况下，如果表示层收到了所有的数据，则用数据代表表示层。例如：RPC，SQL等。<br>传输层<br>这层的功能包括是否选择差错恢复协议还是无差错恢复协议，及在同一主机上对不同应用的数据流的输入进行复用，还包括对收到的顺序不对的数据包的重新排序功能。例如：TCP，UDP，SPX。<br>网络层<br>这层对端到端的包传输进行定义，它定义了能够标识所有结点的逻辑地址，还定义了路由实现的方式和学习的方式。为了适应最大传输单元长度小于包长度的传输介质，网络层还定义了如何将一个包分解成更小的包的分段方法。例如：IP，IPX等。<br>数据链路层<br>它定义了在单个链路上如何传输数据。这些协议与被讨论的各种介质有关。例如：ATM，FDDI等。<br>物理层<br>OSI的物理层规范是有关传输介质的特这些规范通常也参考了其他组织制定的标准。连接头、帧、帧的使用、电流、编码及光调制等都属于各种物理层规范中的内容。物理层常用多个规范完成对所有细节的定义。例如：Rj45，802.3等。</p>
+<h3 id="3、HTTP的请求机制"><a href="#3、HTTP的请求机制" class="headerlink" title="3、HTTP的请求机制"></a>3、HTTP的请求机制</h3>
+        
+          <a class="article-more-a" href="/2018/08/20/pycharm-1/#more">more >></a>
         
       
 
@@ -226,13 +247,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>DAY10：模块与包、异常、面向对象</p>
+        <p>DAY10：模块与包、异常、面向对象、继承、封装、多态、类变量、静态变量</p>
 <p>续Python学习笔记9</p>
 <h3 id="11、模块与包"><a href="#11、模块与包" class="headerlink" title="11、模块与包"></a>11、模块与包</h3><h4 id="1、模块"><a href="#1、模块" class="headerlink" title="1、模块"></a>1、模块</h4><p>基本概念：在Python中进行Python定义和声明的文件，以.py结尾。使用import或from   import导入的文件，我们成为模块。</p>
 <h4 id="2、模块的优势"><a href="#2、模块的优势" class="headerlink" title="2、模块的优势"></a>2、模块的优势</h4><p>首先，使用模块，可以将常用的功能和变量，统一分类存储在不同的文件中，在使用时进行导入。提供了代码的可维护性。<br>其次，使用模块因为将常用功能进行了统一调用，提供了代码的复用性<br>最后，解决了在同一个文件中，方法和变量重名的问题。</p>
 <h4 id="3、导入时的问题"><a href="#3、导入时的问题" class="headerlink" title="3、导入时的问题"></a>3、导入时的问题</h4><p>如果导入了与文件同名的函数（方法名相同，函数个数相同）时，需要使用模块名调用函数，与文件中的函数进行区分<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import my</span><br><span class="line">my.show()</span><br><span class="line">def show():</span><br><span class="line">  pass</span><br><span class="line">show()</span><br></pre></td></tr></table></figure></p>
 <p>模块可以在Python文件中，实现多次import导入，但是只有第一次导入时才真正将模块中的内容运行、方法载入，其他再进行导入时，Python解析器会先检测是否已经载入该模块，如果载入就不在执行相关操作。</p>
-<h4 id="4、总结："><a href="#4、总结：" class="headerlink" title="4、总结："></a>4、总结：</h4>
+<h4 id="4、总结："><a href="#4、总结：" class="headerlink" title="4、总结："></a>4、总结：</h4><p>模块载入一共分三个步骤：<br>1、为模块的导入，创建命名空间（划分新的内存地址），被载入的文件按照全局作用域来使用。<br>2、模块载入后，将在上一步操作中创建的命名空间中，执行模块中的代码<br>3、创建一个模块的名字，来引用模块所在的命名空间。my.show()</p>
+<h4 id="包"><a href="#包" class="headerlink" title="包"></a>包</h4><p>5)当使用from  import引入多个模块时，同时多个模块存在同名函数，那么在程序中调用该函数时，以程序导入的最后一个模块的函数为准。<br>包：<br>1）概念：包在Python中定义为可以包含多个模块文件的目录，其中必须要包含一个名为“<strong>init</strong>.py”的文件，用来初始化包。<br>2）包在调用的使用，首先会初始化<strong>init</strong>.py文件，主要功能为包中模块运行时提供所需要的相关数据，比如：数据库用户名称、密码、地址等内容。<br>
         
           <a class="article-more-a" href="/2018/08/06/Python-10/#more">more >></a>
         
