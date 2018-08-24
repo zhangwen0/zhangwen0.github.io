@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="张文的Python博客">
 <meta property="og:description" content="DAY1：网络原理、HTTP与HTTPS的区别、网络七层模型、HTTP的请求机制、请求方法中get与post的区别、HTML的网页结构 一、网络原理1、HTTP与HTTPS的区别HTTP：我们称为超文本传输协议，主要用来实现从网络传输超文本到本地浏览器，实现高效且准确的超文本传送。目前HTTP的版本为1.1HTTPS：我们认为就是以安全为目标的HTTP通道，即在HTTP协议的基础上加入了SSL层，">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-24T08:52:26.873Z">
+<meta property="og:updated_time" content="2018-08-24T09:02:32.473Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爬虫学习笔记1">
 <meta name="twitter:description" content="DAY1：网络原理、HTTP与HTTPS的区别、网络七层模型、HTTP的请求机制、请求方法中get与post的区别、HTML的网页结构 一、网络原理1、HTTP与HTTPS的区别HTTP：我们称为超文本传输协议，主要用来实现从网络传输超文本到本地浏览器，实现高效且准确的超文本传送。目前HTTP的版本为1.1HTTPS：我们认为就是以安全为目标的HTTP通道，即在HTTP协议的基础上加入了SSL层，">
@@ -188,18 +188,8 @@
 <p>第一，由客户端（浏览器）发出请求<br>第二，通过网络传输，到指定的服务器地址<br>第三，服务器接收相关请求，并进行解析<br>第四，服务器将最终的结果响应回客户端<br>第五，客户端接收到服务器响应后，通过浏览器解析，最终将内容进行展现</p>
 <h3 id="4、客户端访问服务器，发出请求，有四部分构成"><a href="#4、客户端访问服务器，发出请求，有四部分构成" class="headerlink" title="4、客户端访问服务器，发出请求，有四部分构成"></a>4、客户端访问服务器，发出请求，有四部分构成</h3><p>第一，请求方法（request method），默认为get方式。只有在表单提交和文件上传时为post方法。<br>第二，请求网址（request url），即在浏览器中输入的网路地址。<br>第三，请求头（request header），用来标识为一个浏览器正常的访问<br>第四，请求体（request body），用来传输到服务器端的相关数据</p>
 <h3 id="5、请求方法中get与post的区别"><a href="#5、请求方法中get与post的区别" class="headerlink" title="5、请求方法中get与post的区别"></a>5、请求方法中get与post的区别</h3><p>第一、使用get方式提交请求时，相关数据会作为url的参数被一起进行提交，我们可以直接在地址栏中观察到相关数据。而采用post方式请求的url不会包含这些数据，而是直接通过表单提交到服务器。<br>第二、get方式提交请求，提交的数据大小不能大于1024字节，而post方式提交数据，没有大小的限制。<br>总之，如果提交的信息比较敏感或者字节较大时使用post方式；如果只是普通的请求使用get方式。<br><!--more--></p>
-<h2 id="二、HTML网页结构"><a href="#二、HTML网页结构" class="headerlink" title="二、HTML网页结构"></a>二、HTML网页结构</h2><h3 id="1、HTML基本构成"><a href="#1、HTML基本构成" class="headerlink" title="1、HTML基本构成"></a>1、HTML基本构成</h3><p>HTML有三个标签来构成基本结构：<br>&lt;\html&gt;:作为HTML文件的根标签，所有的页面中的标签和内容都要在HTML标签的范围内。<br>&lt;\head&gt;：作为HTML文件的头部标签，相关页面的信息、编码、引导外部的CSS文件和JS文件，都需要放置在head标签中。<br>&lt;\body&gt;：body标签中的内容，就是我们爬虫需要解析的主体。所有需要在页面上展现的内容，都会放置在该标签中。</p>
-<h3 id="2、常见的HTML标签"><a href="#2、常见的HTML标签" class="headerlink" title="2、常见的HTML标签"></a>2、常见的HTML标签</h3><p>1）h1…h6：标题标签，用来显示标题，h1最大，h6最小。<br>2）</p><p>：段落标签。用来对文本内容进行分段。<br>3）<a>：链接标签。用来跳转到指定的网址。<br><a target="" href="URL">链接地址</a><br>其中参数target，_self:在自身的窗口重新打开指定的网址<br>_blank：在一个新窗口中打开指定的网址<br>4）<img>：图片标签。用来载入指定位置的图片，通常可以接收的图片类型：JPG、png、gif、bmp<br><img src="" alt=""><br>其中：src：指定图片的具体位置<br>      alt：其中的内容，作为图片无法载入时，显示的内容。<br>5）表格标签：table、tr、th、td</a></p>
-<p><table>：表格标签，所有表格中的行和单元格内容都必须放置在内部。</table></p>
-<p><tr>:表格行，代表表格一行</tr></p>
-<p><th>:表格头，代表表格的标题行</th></p>
-<p><td>：表格单元格，代表表格中的每个单元内容<br>6）列表<br>有序列表：</td></p>
-<p><ol><br>   <li></li><br></ol><br>无序列表:</p>
-<p><ul><br>   <li></li><br></ul><br>自定义列表：</p>
-<p><dl><br>   <dt><br>      <dd></dd><br>   </dt><br></dl><br>7)div与span<br>div：块级元素，用来实现页面布局。自身没有任何效果<br>span:内联元素，用做文本容器。<br>8）表单</p>
-<p><form name="表单名" action="URL" method="get/post"><br>默认情况，如果没有声明method属性，缺省值为get</form></p>
-<p><input type=""><br>输入标签，type属性：<br>text:文本框<br>password：密码框<br>checkbox：复选框<br>radio：单选框<br>submit：提交按钮<br>reset：重置按钮<br>button：按钮<br>file:文件上传</p>
-<p><textarea cols="列数" rows="行数">：文件区标签</textarea></p>
+<h2 id="二、HTML网页结构"><a href="#二、HTML网页结构" class="headerlink" title="二、HTML网页结构"></a>二、HTML网页结构</h2><h3 id="1、HTML基本构成"><a href="#1、HTML基本构成" class="headerlink" title="1、HTML基本构成"></a>1、HTML基本构成</h3><p>HTML有三个标签来构成基本结构：<br>&lt; html&gt;:作为HTML文件的根标签，所有的页面中的标签和内容都要在HTML标签的范围内。<br>&lt; head&gt;：作为HTML文件的头部标签，相关页面的信息、编码、引导外部的CSS文件和JS文件，都需要放置在head标签中。<br>&lt; body&gt;：body标签中的内容，就是我们爬虫需要解析的主体。所有需要在页面上展现的内容，都会放置在该标签中。</p>
+<h3 id="2、常见的HTML标签"><a href="#2、常见的HTML标签" class="headerlink" title="2、常见的HTML标签"></a>2、常见的HTML标签</h3><p>1）h1…h6：标题标签，用来显示标题，h1最大，h6最小。<br>2）&lt; p &gt;：段落标签。用来对文本内容进行分段。<br>3）&lt; a &gt;：链接标签。用来跳转到指定的网址。<br>&lt; a target=’’ href=’URL’&gt;链接地址&lt; /a&gt;<br>其中参数target，_self:在自身的窗口重新打开指定的网址<br>_blank：在一个新窗口中打开指定的网址<br>4）&lt; img&gt;：图片标签。用来载入指定位置的图片，通常可以接收的图片类型：JPG、png、gif、bmp<br>&lt; img src=”” alt=””&gt;<br>其中：<br>src：指定图片的具体位置<br>alt：其中的内容，作为图片无法载入时，显示的内容。<br>5）表格标签：table、tr、th、td<br>&lt; table&gt;：表格标签，所有表格中的行和单元格内容都必须放置在内部。<br>&lt; tr&gt;:表格行，代表表格一行<br>&lt; th&gt;:表格头，代表表格的标题行<br>&lt; td&gt;：表格单元格，代表表格中的每个单元内容<br>6）列表<br>有序列表：<br>&lt; ol&gt;<br>   &lt; li&gt;&lt; /li&gt;<br>&lt; /ol&gt;<br>无序列表:<br>&lt; ul&gt;<br>   &lt; li&gt;&lt; /li&gt;<br>&lt; /ul&gt;<br>自定义列表：<br>&lt; dl&gt;<br>   &lt; dt&gt;<br>      &lt; dd&gt;&lt; /dd&gt;<br>   &lt; /dt&gt;<br>&lt; /dl&gt;<br>7)div与span<br>div：块级元素，用来实现页面布局。自身没有任何效果<br>span:内联元素，用做文本容器。<br>8）表单<br>&lt; form name=”表单名” action=”URL” method=”get/post”&gt;<br>默认情况，如果没有声明method属性，缺省值为get<br>&lt; input type=””&gt;<br>输入标签，type属性：<br>text:文本框<br>password：密码框<br>checkbox：复选框<br>radio：单选框<br>submit：提交按钮<br>reset：重置按钮<br>button：按钮<br>file:文件上传<br>&lt; textarea cols=”列数” rows=”行数”&gt;：文件区标签</p>
 <p> –未完待续–</p>
 
       
